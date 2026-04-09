@@ -1,32 +1,56 @@
 ---
 layout: default
-title : Publications
-navbar_title: Publications
+title: Publications
+navbar_title: PUBLICATIONS
 body_attr: >-
   data-spy="scroll" data-target="#navbar-year" data-offset="100"
 ---
 
-{% assign pubs_by_year = site.publications | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" %}
+{% assign preprints = site.publications | sort: "date" | reverse | where: "preprint", true %}
+{% assign published = site.publications | sort: "date" | reverse | where_exp: "pub", "pub.preprint != true" %}
+{% assign published_by_year = published | group_by_exp: "item", "item.date | date: '%Y'" %}
 
-<div class="row">
-    <div class="col-12 col-lg-10">
-        {% for year in pubs_by_year %}
-        {% assign num_papers = year.items | size %}
-        <h2 class="pt-4" id="year-{{ year.name }}">{{ year.name }}</h2>
-        <div class="my-0 p-0 bg-white shadow-sm rounded-xl">
-            {% for item in year.items %}
-                {% include widgets/publication_item.html item=item hide_bottom_border=forloop.last first=forloop.first last=forloop.last %}
-            {% endfor %}
-        </div>
-        {% endfor %}
-    </div>
+{% if preprints.size > 0 %}
+<h2 class="pt-4">Preprints</h2>
+<div class="my-0 p-0 bg-white shadow-sm rounded-xl">
+    {% for item in preprints %}
+        {% include widgets/publication_item.html item=item hide_bottom_border=forloop.last first=forloop.first last=forloop.last %}
+    {% endfor %}
+</div>
+{% endif %}
 
-    <div class="col-2 d-none d-lg-block">
-        <div id="navbar-year" class="nav nav-pills flex-column sticky-top" style="top: 80px">
-            {% for year in pubs_by_year %}
-            <a class="nav-link d-block" href="#year-{{ year.name }}">{{ year.name }}</a>
-            {% endfor %}
-        </div>
-    </div>
+{% for year in published_by_year %}
+<h2 class="pt-4" id="year-{{ year.name }}">{{ year.name }}</h2>
+<div class="my-0 p-0 bg-white shadow-sm rounded-xl">
+    {% for item in year.items %}
+        {% include widgets/publication_item.html item=item hide_bottom_border=forloop.last first=forloop.first last=forloop.last %}
+    {% endfor %}
+</div>
+{% endfor %}
 
+<!-- Patents -->
+<h2 class="pt-4">Patents & Registered Software</h2>
+<div class="my-0 p-3 bg-white shadow-sm rounded-xl">
+    <ul>
+        <li>Hyun Jong Yang, Sojeong Park, and Hyeonho Noh, "텍스트 변환 장치 및 방법," KR 10-2024-0134973 (filed).</li>
+        <li>Hyun Jong Yang, Hyeonho Noh, "무선 통신 시스템에서 상향링크 통신을 위한 강화학습 기반 사용자 선택 방법 및 장치," KR 10-2022-0083124</li>
+        <li>Hyun Jong Yang, Harim Lee, Yeongjun Kim, Hyeonho Noh, "비동기적으로 수신된 OFDM 신호 검파 방법 및 장치," KR 10-2021-0186361</li>
+        <li>Hyun Jong Yang and Hyeonho Noh, "레이더-통신 결합 시스템을 위한 송수신 빔포밍 방법 및 장치," KR 10-2021-0186361</li>
+        <li>Hyun Jong Yang and Hyeonho Noh, "레이더-통신 결합 시스템의 신호 생성 방법," KR 10-2020-0010653 (filed)</li>
+        <li>Hyeonsu Lyu, Hyun Jong Yang, Hyeonho Noh, and Jonggyu Jang, "통신과 드론 제어가 통합된 시뮬레이터," C-2019-034510 (Software)</li>
+        <li>Hyun Jong Yang, Jonggyu Jang, Harim Lee, Yeongjun Kim, Hyeonho Noh, Jungeun Lee, and Hyeonsu Lyu, "레이더를 이용한 능동형 타겟 감지 드론 통신 기지국 시뮬레이터," C-2018-037076 (Software)</li>
+    </ul>
+</div>
+
+<!-- Domestic Papers -->
+<h2 class="pt-4">Domestic Papers</h2>
+<div class="my-0 p-3 bg-white shadow-sm rounded-xl">
+    <ul>
+        <li>Hyeonho Noh, Hyeonsu Lyu, and Hyun Jong Yang, "딥러닝 기반 OFDM ISAC 간섭 제거," 한국통신학회 통신정보 합동학술대회, 4월 2026.</li>
+        <li>Hyeonho Noh, Jungyeon Koh, and Hyun Jong Yang, "Semantic Multiplexing for Multi-User Image Transmission," 한국통신학회 추계종합학술발표회, 11월 2025.</li>
+        <li>Hyeonsu Lyu, Hyeonho Noh, Hyun Jong Yang, "Secure Radio Resource and Routing Optimization in Multi-Hop Space-Air-Ground-Sea Integrated Networks," 한국통신학회 하계종합학술발표회, 6월 2025.</li>
+        <li>Hyeonho Noh, Hyun Jong Yang, "디지털 트윈을 위한 최신 통신 및 센싱 기술 경향," 한국통신학회 학술대회논문집, 2월 2025.</li>
+        <li>Hyeonho Noh and Hyun Jong Yang*, "IEEE 802.11ax 상향 링크를 위한 학습 기반 유저 선택 및 자원 할당," 한국통신학회 동계종합학술발표회, 2월 2022.</li>
+        <li>Hyeonho Noh, Dongmin Seo, Moonjin Lee, Hyun Jong Yang*, "HNS 해양배출 영상학적 현상 연구," 한국해양환경 에너지 학술대회, 10월 2021.</li>
+    </ul>
 </div>

@@ -2,7 +2,7 @@
 body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
-    padding-top: 5.0rem;
+    padding-top: 1.5rem;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -42,8 +42,20 @@ h1, h2, h3, h4, h5, h6,
     font-weight: 400;
 }
 
-.navbar {
-    opacity: 0.95;
+/* Sidebar menu under profile card */
+.sidebar-menu .nav-link {
+    color: #495057;
+    border-radius: 4px;
+}
+
+.sidebar-menu .nav-link:hover {
+    background-color: #f0f0f0;
+    color: #212529;
+}
+
+.sidebar-menu .nav-link.active {
+    color: #007bff;
+    background-color: #e9f0ff;
 }
 
 .inline-badge {
