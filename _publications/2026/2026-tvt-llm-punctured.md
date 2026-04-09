@@ -1,6 +1,6 @@
 ---
 title:          "Robust Transmission of Punctured Text with Large Language Model-based Recovery"
-date:           2026-01-01 00:01:00 +0900
+date:           2026-01-15 00:01:00 +0900
 research_area:
 - llm
 - ai_wireless

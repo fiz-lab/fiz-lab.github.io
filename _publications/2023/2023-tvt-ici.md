@@ -1,6 +1,6 @@
 ---
 title:          "ICI-Robust Transceiver Design for Integration of MIMO-OFDM Radar and MU-MIMO Communication"
-date:           2023-01-01 00:01:00 +0900
+date:           2023-01-15 00:01:00 +0900
 research_area: isac
 selected:       true
 pub:            "IEEE Transactions on Vehicular Technology (TVT), vol. 72, no. 1, pp. 821-838, Jan. 2023"
