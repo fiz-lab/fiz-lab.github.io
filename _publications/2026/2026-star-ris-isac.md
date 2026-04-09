@@ -12,4 +12,5 @@ authors:
 - Hyeonsu Lyu
 - Hyun Jong Yang
 links:
+  PDF: https://arxiv.org/abs/2507.18035
 ---

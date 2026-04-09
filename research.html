@@ -10,13 +10,13 @@ navbar_title: RESEARCH
 {% assign isac_pubs = site.publications | where_exp: "pub", "pub.research_area contains 'isac'" | sort: "date" | reverse %}
 <div class="card border-0 shadow-sm bg-white mb-4">
     <div class="card-body p-4">
-        <h3><i class="fas fa-satellite-dish"></i> AI-enabled Integrated Sensing and Communication (ISAC)</h3>
+        <h3 class="text-primary">📡 AI-enabled Integrated Sensing and Communication (ISAC)</h3>
         <hr/>
         <p>
             Our lab explores AI-enabled integrated approaches that unify physical-layer sensing, high-speed communication, and distributed computation. By developing novel PHY/MAC algorithms and scalable protocols, we aim to achieve systems that can dynamically adapt to their environment, optimize resource utilization, and enable seamless interaction among connected intelligent devices.
         </p>
         {% if isac_pubs.size > 0 %}
-        <p><strong>Related Publications:</strong></p>
+        <p><strong class="text-primary">Related Publications:</strong></p>
         <ul>
             {% for pub in isac_pubs limit:3 %}
             <li>{{ pub.title }}, <em>{{ pub.pub }}</em></li>
@@ -29,13 +29,13 @@ navbar_title: RESEARCH
 {% assign llm_pubs = site.publications | where_exp: "pub", "pub.research_area contains 'llm'" | sort: "date" | reverse %}
 <div class="card border-0 shadow-sm bg-white mb-4">
     <div class="card-body p-4">
-        <h3><i class="fas fa-robot"></i> Large Language Model (LLM)-based Wireless Orchestrator</h3>
+        <h3 class="text-primary">🤖 Large Language Model (LLM)-based Wireless Orchestrator</h3>
         <hr/>
         <p>
             Our lab envisions a Large Language Model (LLM)-based Wireless Orchestrator that serves as an intelligent controller for next-generation networks. Leveraging the reasoning and adaptation capabilities of LLMs, the orchestrator can interpret network states, predict resource demands, and autonomously generate control strategies across multiple layers of the wireless stack.
         </p>
         {% if llm_pubs.size > 0 %}
-        <p><strong>Related Publications:</strong></p>
+        <p><strong class="text-primary">Related Publications:</strong></p>
         <ul>
             {% for pub in llm_pubs limit:3 %}
             <li>{{ pub.title }}, <em>{{ pub.pub }}</em></li>
@@ -48,13 +48,13 @@ navbar_title: RESEARCH
 {% assign ai_pubs = site.publications | where_exp: "pub", "pub.research_area contains 'ai_wireless'" | sort: "date" | reverse %}
 <div class="card border-0 shadow-sm bg-white mb-4">
     <div class="card-body p-4">
-        <h3><i class="fas fa-wifi"></i> AI-aided Wireless Communication</h3>
+        <h3 class="text-primary">📶 AI-aided Wireless Communication</h3>
         <hr/>
         <p>
             Our research focuses on making artificial intelligence a central component in the design, optimization, and management of next-generation wireless networks. By leveraging machine learning and large-scale AI models, we aim to build systems that can sense their environment, anticipate traffic and resource demands, and adapt communication strategies in real time. Through this approach, our lab is working to create wireless technologies that are not only more efficient, but also more resilient and scalable across all layers of the wireless stack.
         </p>
         {% if ai_pubs.size > 0 %}
-        <p><strong>Related Publications:</strong></p>
+        <p><strong class="text-primary">Related Publications:</strong></p>
         <ul>
             {% for pub in ai_pubs limit:3 %}
             <li>{{ pub.title }}, <em>{{ pub.pub }}</em></li>
@@ -67,13 +67,13 @@ navbar_title: RESEARCH
 {% assign dl_pubs = site.publications | where_exp: "pub", "pub.research_area contains 'dl_sensing'" | sort: "date" | reverse %}
 <div class="card border-0 shadow-sm bg-white mb-4">
     <div class="card-body p-4">
-        <h3><i class="fas fa-brain"></i> Deep Learning-based Sensing</h3>
+        <h3 class="text-primary">🎯 Deep Learning-based Sensing</h3>
         <hr/>
         <p>
             Deep Learning-based Sensing is reshaping the way wireless systems interact with the world. Instead of relying on handcrafted features or rigid signal models, deep neural networks can automatically discover patterns hidden in complex wireless data. This capability enables wireless signals to serve as powerful sensors, capturing information about human behavior, device activity, and environmental changes. By fusing communication with perception, deep learning-based sensing opens new opportunities for building adaptive, intelligent, and human-aware wireless technologies.
         </p>
         {% if dl_pubs.size > 0 %}
-        <p><strong>Related Publications:</strong></p>
+        <p><strong class="text-primary">Related Publications:</strong></p>
         <ul>
             {% for pub in dl_pubs limit:3 %}
             <li>{{ pub.title }}, <em>{{ pub.pub }}</em></li>

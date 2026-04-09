@@ -11,4 +11,5 @@ authors:
 - Hyeonho Noh
 - Jonggyu Jang
 links:
+  PDF: https://arxiv.org/pdf/2603.29717
 ---
