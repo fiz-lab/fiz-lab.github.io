@@ -20,7 +20,7 @@
             <h5 class="mt-0 mb-1 font-weight-normal">{{ item.title }}</h5>
             <p class="mt-0 mb-0 small">{% include widgets/author_list.html authors=item.authors %}</p>
             <p class="mt-0 mb-0 small">{{item.pub_pre}}<i>{{ item.pub }}</i>{{ item.pub_post }} {{ item.pub_date }} {{ item.pub_last }} <span data-semantic-scholar-id="{{ item.semantic_scholar_id }}"></span></p>
-            {% if areas != "" %}<p class="mt-1 mb-0">{% for area in areas %}{% assign a = area | strip %}{% if a == "isac" %}<span class="badge badge-primary badge-publication mr-1">ISAC</span>{% elsif a == "llm" %}<span class="badge badge-success badge-publication mr-1">LLM</span>{% elsif a == "ai_wireless" %}<span class="badge badge-info badge-publication mr-1">AI-Wireless</span>{% elsif a == "dl_sensing" %}<span class="badge badge-warning badge-publication mr-1">DL-Sensing</span>{% endif %}{% endfor %}</p>{% endif %}
+            {% if areas != "" %}<p class="mt-1 mb-0">{% for area in areas %}{% assign a = area | strip %}{% if a == "isac" %}<span class="badge badge-primary badge-publication mr-1">ISAC</span>{% elsif a == "llm" %}<span class="badge badge-success badge-publication mr-1">LLM</span>{% elsif a == "ai_wireless" %}<span class="badge badge-info badge-publication mr-1">AI-Wireless</span>{% elsif a == "dl_sensing" %}<span class="badge badge-warning badge-publication mr-1">DL-Sensing</span>{% elsif a == "6g_network" %}<span class="badge badge-publication mr-1" style="background-color: #e57373; color: #fff;">6G-Network</span>{% endif %}{% endfor %}</p>{% endif %}
 
             <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">
                 {% for link in item.links %}
@@ -44,7 +44,7 @@
                 <h5 class="mt-0 mb-1 font-weight-normal">{{ item.title }}</h5>
                 <p class="mt-0 mb-0 small">{% include widgets/author_list.html authors=item.authors %}</p>
                 <p class="mt-0 mb-0 small">{{item.pub_pre}}<i>{{ item.pub }}</i>{{ item.pub_post }} {{ item.pub_date }} {{ item.pub_last }} <span data-semantic-scholar-id="{{ item.semantic_scholar_id }}"></span></p>
-                {% if areas != "" %}<p class="mt-1 mb-0">{% for area in areas %}{% assign a = area | strip %}{% if a == "isac" %}<span class="badge badge-primary badge-publication mr-1">ISAC</span>{% elsif a == "llm" %}<span class="badge badge-success badge-publication mr-1">LLM</span>{% elsif a == "ai_wireless" %}<span class="badge badge-info badge-publication mr-1">AI-Wireless</span>{% elsif a == "dl_sensing" %}<span class="badge badge-warning badge-publication mr-1">DL-Sensing</span>{% endif %}{% endfor %}</p>{% endif %}
+                {% if areas != "" %}<p class="mt-1 mb-0">{% for area in areas %}{% assign a = area | strip %}{% if a == "isac" %}<span class="badge badge-primary badge-publication mr-1">ISAC</span>{% elsif a == "llm" %}<span class="badge badge-success badge-publication mr-1">LLM</span>{% elsif a == "ai_wireless" %}<span class="badge badge-info badge-publication mr-1">AI-Wireless</span>{% elsif a == "dl_sensing" %}<span class="badge badge-warning badge-publication mr-1">DL-Sensing</span>{% elsif a == "6g_network" %}<span class="badge badge-publication mr-1" style="background-color: #e57373; color: #fff;">6G-Network</span>{% endif %}{% endfor %}</p>{% endif %}
 
                 <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">
                     {% for link in item.links %}
