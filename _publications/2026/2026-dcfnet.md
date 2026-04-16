@@ -1,12 +1,12 @@
 ---
 title:          "DCFNet: Doppler Correction Filter Network for Integrated Sensing and Communication in Multi-User MIMO-OFDM Systems"
-date:           2026-02-01 00:01:00 +0900
+date:           2026-04-15 00:01:00 +0900
 research_area:
 - isac
 - ai_wireless
-preprint: true
+preprint: false
 selected:       true
-pub:            "IEEE Transactions on Wireless Communications (TWC), Under review (2nd Round)"
+pub:            "IEEE Transactions on Wireless Communications (TWC), accepted"
 pub_date:       ""
 abstract: ""
 authors:
