@@ -7,5 +7,7 @@ pages:
   url: /research
 - name: PUBLICATIONS
   url: /publications
+- name: MEMORY
+  url: /memory
 - name: TEACHING
   url: /teaching

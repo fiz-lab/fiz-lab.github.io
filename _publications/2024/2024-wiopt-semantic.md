@@ -3,7 +3,7 @@ title:          "Deep Reinforcement Learning-based Resource Allocation and Mode 
 date:           2024-06-01 00:01:00 +0900
 research_area: ai_wireless
 selected:       false
-pub:            "WiOpt Workshop on Modeling and Optimization for Semantic Communications (MOSC)"
+pub:            "International Symposium on Modeling and Optimization in Mobile, Ad Hoc, and Wireless Networks (WiOpt)"
 pub_date:       ""
 abstract: ""
 authors:

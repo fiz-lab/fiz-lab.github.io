@@ -19,14 +19,53 @@ body_attr: >-
 </div>
 {% endif %}
 
+{% comment %} Render 2023 and later, grouped by year {% endcomment %}
 {% for year in published_by_year %}
+    {% assign yr_num = year.name | plus: 0 %}
+    {% if yr_num >= 2023 %}
 <h2 class="pt-4" id="year-{{ year.name }}">{{ year.name }}</h2>
 <div class="my-0 p-0 bg-white shadow-sm rounded-xl">
     {% for item in year.items %}
         {% include widgets/publication_item.html item=item hide_bottom_border=forloop.last first=forloop.first last=forloop.last %}
     {% endfor %}
 </div>
+    {% endif %}
 {% endfor %}
+
+{% comment %} Collect all pre-2023 items into one "Before 2023" section {% endcomment %}
+{% assign old_items_count = 0 %}
+{% for year in published_by_year %}
+    {% assign yr_num = year.name | plus: 0 %}
+    {% if yr_num < 2023 %}
+        {% assign old_items_count = old_items_count | plus: year.items.size %}
+    {% endif %}
+{% endfor %}
+
+{% if old_items_count > 0 %}
+<h2 class="pt-4" id="year-before-2023">Before 2023</h2>
+<div class="my-0 p-0 bg-white shadow-sm rounded-xl">
+    {% assign rendered = 0 %}
+    {% for year in published_by_year %}
+        {% assign yr_num = year.name | plus: 0 %}
+        {% if yr_num < 2023 %}
+            {% for item in year.items %}
+                {% assign rendered = rendered | plus: 1 %}
+                {% if rendered == 1 %}
+                    {% assign is_first = true %}
+                {% else %}
+                    {% assign is_first = false %}
+                {% endif %}
+                {% if rendered == old_items_count %}
+                    {% assign is_last = true %}
+                {% else %}
+                    {% assign is_last = false %}
+                {% endif %}
+                {% include widgets/publication_item.html item=item hide_bottom_border=is_last first=is_first last=is_last %}
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+</div>
+{% endif %}
 
 <!-- Patents -->
 <h2 class="pt-4">Patents & Registered Software</h2>

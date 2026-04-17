@@ -22,10 +22,15 @@ short_bio: >-
     We focus on developing future wireless systems. Our key objectives include designing advanced wireless communication technologies,
     cultivating talent through next-generation wireless network exploration, and contributing to academia and industry.
   </p>
-  <p>
-    Current research interests encompass <strong>6G systems</strong>, <strong>intelligent wireless networking</strong>,
-    and <strong>connected intelligent systems</strong>.
+  <p class="mb-1">
+    Current research interests:
   </p>
+  <ul>
+    <li>AI-enabled Integrated sensing and communication</li>
+    <li>Multimodal large language model for wireless communication networks</li>
+    <li>AI-aided Wireless Communication</li>
+    <li>Deep Learning-based Sensing</li>
+  </ul>
   <p>
     📢 <strong>FIZLab은 AI와 무선 통신 및 센싱에 관심이 있는 학부 인턴 및 대학원생을 모집하고 있습니다.</strong>
     관심이 있는 학생은 아래 이메일로 연락주세요.
@@ -56,6 +61,7 @@ experience:
   date: Sep. 2025 ~
 - name: Seoul National University
   logo: /assets/images/badges/snu.png
+  dept: Department of Electrical and Computer Engineering
   position: Postdoctoral Researcher
   date: Oct. 2024 ~ Jun. 2025
   detail: "Advisor: Prof. Hyun Jong Yang"

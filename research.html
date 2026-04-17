@@ -22,7 +22,7 @@ navbar_title: RESEARCH
         <p><strong class="text-primary">Related Publications:</strong></p>
         <ul>
             {% for pub in isac_pubs limit:3 %}
-            <li>{{ pub.title }}, <em>{{ pub.pub }}</em></li>
+            <li>{{ pub.title }}, <em>{% include widgets/pub_styled.html pub=pub.pub %}</em></li>
             {% endfor %}
         </ul>
         {% endif %}
@@ -32,19 +32,19 @@ navbar_title: RESEARCH
 {% assign llm_pubs = site.publications | where_exp: "pub", "pub.research_area contains 'llm'" | sort: "date" | reverse %}
 <div class="card border-0 shadow-sm bg-white mb-4">
     <div class="card-body p-4">
-        <h3 class="text-primary">🤖 Large Language Model (LLM)-based Wireless Orchestrator</h3>
+        <h3 class="text-primary">🤖 Multimodal Large Language Model (MLLM) for Wireless Communication Networks</h3>
         <hr/>
         <div class="mb-3">
-            <img src="{{ '/assets/images/covers/MLLM_agent.png' | relative_url }}" class="img-fluid rounded w-100" alt="LLM Agent">
+            <img src="{{ '/assets/images/covers/MLLM_agent.png' | relative_url }}" class="img-fluid rounded w-100" alt="MLLM Agent">
         </div>
         <p>
-            Our lab envisions a Large Language Model (LLM)-based Wireless Orchestrator that serves as an intelligent controller for next-generation networks. Leveraging the reasoning and adaptation capabilities of LLMs, the orchestrator can interpret network states, predict resource demands, and autonomously generate control strategies across multiple layers of the wireless stack.
+            Our lab explores Multimodal Large Language Models (MLLMs) as intelligent orchestrators for next-generation wireless communication networks. By jointly reasoning over heterogeneous inputs—channel measurements, sensing signals, user context, and natural-language intents—MLLMs can interpret complex network states, predict resource demands, and autonomously generate control strategies across multiple layers of the wireless stack.
         </p>
         {% if llm_pubs.size > 0 %}
         <p><strong class="text-primary">Related Publications:</strong></p>
         <ul>
             {% for pub in llm_pubs limit:3 %}
-            <li>{{ pub.title }}, <em>{{ pub.pub }}</em></li>
+            <li>{{ pub.title }}, <em>{% include widgets/pub_styled.html pub=pub.pub %}</em></li>
             {% endfor %}
         </ul>
         {% endif %}
@@ -63,7 +63,7 @@ navbar_title: RESEARCH
         <p><strong class="text-primary">Related Publications:</strong></p>
         <ul>
             {% for pub in ai_pubs limit:3 %}
-            <li>{{ pub.title }}, <em>{{ pub.pub }}</em></li>
+            <li>{{ pub.title }}, <em>{% include widgets/pub_styled.html pub=pub.pub %}</em></li>
             {% endfor %}
         </ul>
         {% endif %}
@@ -82,7 +82,7 @@ navbar_title: RESEARCH
         <p><strong class="text-primary">Related Publications:</strong></p>
         <ul>
             {% for pub in dl_pubs limit:3 %}
-            <li>{{ pub.title }}, <em>{{ pub.pub }}</em></li>
+            <li>{{ pub.title }}, <em>{% include widgets/pub_styled.html pub=pub.pub %}</em></li>
             {% endfor %}
         </ul>
         {% endif %}

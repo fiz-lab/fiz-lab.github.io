@@ -17,13 +17,16 @@ navbar_title: HOME
 {% assign all_pubs = site.publications | sort: "date" | reverse %}
 {% assign pubs = "" | split: "" %}
 {% for pub in all_pubs %}
-  {% if pub.pub contains 'Transactions' or pub.pub contains 'Magazine' %}
-    {% assign pubs = pubs | push: pub %}
-  {% endif %}
+  {% unless pub.preprint %}
+    {% if pub.pub contains 'Transactions' or pub.pub contains 'Magazine' %}
+      {% assign pubs = pubs | push: pub %}
+    {% endif %}
+  {% endunless %}
 {% endfor %}
 {%
 include widgets/publication_card.html
 publications=pubs
+limit=5
 title='<i class="fas fa-star"></i> Selected Publications'
 %}
 {% endif %}
