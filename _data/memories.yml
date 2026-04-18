@@ -6,6 +6,10 @@
 
 - date: Aug. 2023
   title: USA Research Tour
-  image: /assets/images/memories/2308_stanford.png
+  images:
+    - /assets/images/memories/2308_stanford.jpg
+    - /assets/images/memories/2308_google.jpg
+    - /assets/images/memories/2308_qualcomm1.jpg
+    - /assets/images/memories/2308_qualcomm2.jpg
   body: |
     <p>Prof. Noh visited the United States and met with researchers and engineers from Stanford, Google, Qualcomm, Amazon, Clockwork, and Saina Health.</p>
