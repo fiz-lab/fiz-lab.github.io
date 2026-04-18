@@ -3,3 +3,9 @@
   image: /assets/images/memories/2602_sweden.png
   body: |
     <p>Prof. Noh attended the 3GPP standardization meeting in Gothenburg, Sweden.</p>
+
+- date: Aug. 2023
+  title: USA Research Tour
+  image: /assets/images/memories/2308_stanford.png
+  body: |
+    <p>Prof. Noh visited the United States and met with researchers and engineers from Stanford, Google, Qualcomm, Amazon, Clockwork, and Saina Health.</p>
