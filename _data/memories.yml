@@ -5,11 +5,22 @@
     <p>Prof. Noh attended the 3GPP standardization meeting in Gothenburg, Sweden.</p>
 
 - date: Aug. 2023
+  title: 6G Presentation in Stanford University
+  images:
+    - /assets/images/memories/2308_2_stanford1.jpg
+    - /assets/images/memories/2308_2_stanford2.jpg
+    - /assets/images/memories/2308_2_stanford3.jpg
+  body: |
+    <p>Prof. Noh gave a presentation on 6G research at Stanford University, hosted by Prof. Howard A. Zebker.</p>
+
+- date: Aug. 2023
   title: USA Research Tour
   images:
-    - /assets/images/memories/2308_stanford.jpg
+    - /assets/images/memories/2308_stanford_Paulraj.jpg
     - /assets/images/memories/2308_google.jpg
+    - /assets/images/memories/2308_google2.jpg
     - /assets/images/memories/2308_qualcomm1.jpg
     - /assets/images/memories/2308_qualcomm2.jpg
+    - /assets/images/memories/2308_amazon.jpg
   body: |
     <p>Prof. Noh visited the United States and met with researchers and engineers from Stanford, Google, Qualcomm, Amazon, Clockwork, and Saina Health.</p>
