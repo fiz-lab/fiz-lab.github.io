@@ -6,7 +6,7 @@ research_area:
 - ai_wireless
 preprint: false
 selected:       true
-pub:            "IEEE Transactions on Wireless Communications (TWC), accepted"
+pub:            "IEEE Transactions on Wireless Communications (TWC), doi: 10.1109/TWC.2026.3687605"
 pub_date:       ""
 abstract: ""
 authors:
@@ -15,5 +15,5 @@ authors:
 - Moe Z. Win
 - Hyun Jong Yang
 links:
-  PDF: https://arxiv.org/abs/2506.16191
+  PDF: https://ieeexplore.ieee.org/document/11505748
 ---
