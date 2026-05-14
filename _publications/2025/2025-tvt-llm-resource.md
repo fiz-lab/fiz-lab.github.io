@@ -1,6 +1,7 @@
 ---
 title:          "Adaptive Resource Allocation Optimization Using Large Language Models in Dynamic Wireless Environments"
 date:           2025-08-01 00:01:00 +0900
+type:           journal
 research_area:
 - llm
 - ai_wireless

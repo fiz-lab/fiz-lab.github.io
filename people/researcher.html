@@ -1,0 +1,68 @@
+---
+layout: default
+title: Researcher
+navbar_title: PEOPLE
+permalink: /people/researcher/
+---
+
+<div class="row mt-3">
+<div class="col">
+
+<h2 class="text-primary font-weight-bold mb-4" style="border-bottom: 3px solid #1565c0; display: inline-block; padding-bottom: 6px;">Research Interns</h2>
+
+<div class="row">
+
+    {% assign interns = site.data.researchers %}
+    {% for m in interns %}
+    <div class="col-md-6 mb-4">
+        <div class="card border shadow-sm h-100" style="border-radius: 12px;">
+            <div class="card-body p-4 d-flex flex-column">
+                <div class="text-center pt-2 pb-3">
+                    <img src="{{ m.photo | relative_url }}" alt="{{ m.name }}" class="rounded" style="width: 180px; height: 180px; object-fit: cover;">
+                </div>
+                <div class="text-center mb-2">
+                    <h4 class="text-primary font-weight-bold mb-1">{{ m.name }}{% if m.name_ko %} ({{ m.name_ko }}){% endif %}</h4>
+                    <div style="color: #1fa089; font-size: 1.05em; font-weight: 600;">{{ m.position }}</div>
+                </div>
+                <hr class="my-3" />
+                <div class="flex-grow-1" style="font-size: 0.95em;">
+                    {% if m.degrees %}
+                    <div class="d-flex mb-3">
+                        <div style="color: #1565c0; min-width: 24px;"><i class="fas fa-graduation-cap"></i></div>
+                        <div>
+                            {% for d in m.degrees %}<div>{{ d }}</div>{% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if m.experience %}
+                    <div class="d-flex mb-3">
+                        <div style="color: #1565c0; min-width: 24px;"><i class="fas fa-briefcase"></i></div>
+                        <div>
+                            {% for e in m.experience %}<div>{{ e }}</div>{% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if m.research %}
+                    <div class="d-flex mb-3">
+                        <div style="color: #1565c0; min-width: 24px;"><i class="fas fa-microscope"></i></div>
+                        <div>{{ m.research }}</div>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="d-flex mt-3" style="gap: 8px;">
+                    {% if m.email %}
+                    <a href="mailto:{{ m.email }}" class="btn btn-outline-secondary flex-fill"><i class="fas fa-envelope"></i> Email</a>
+                    {% endif %}
+                    {% if m.page %}
+                    <a href="{{ m.page }}" target="_blank" class="btn btn-primary flex-fill"><i class="fas fa-home"></i> Page</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+</div>
+</div>

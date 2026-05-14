@@ -1,0 +1,23 @@
+- name: Wonseop Choi
+  name_ko: 최원섭
+  photo: /assets/images/photos/wschoi.jpg
+  position: Undergraduate Research Intern
+  degrees:
+    - "B.S. @Hanbat National University (in progress)"
+  experience:
+    - "Research Intern @FIZLab (2025 - Present)"
+  research: "T.B.D."
+  email: choiws3737@gmail.com
+  page:
+
+- name: SeongHyeon Lim
+  name_ko: 임성현
+  photo: /assets/images/photos/shim.jpg
+  position: Undergraduate Research Intern
+  degrees:
+    - "B.S. @Hanbat National University (in progress)"
+  experience:
+    - "Research Intern @FIZLab (2025 - Present)"
+  research: "T.B.D."
+  email: lsh0o0@naver.com
+  page:

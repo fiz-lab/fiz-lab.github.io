@@ -1,6 +1,7 @@
 ---
 title:          "Leveraging Multiple PRF Radar for Target Detection and Sea Clutter Suppression with Deep Learning Network"
 date:           2024-05-01 00:01:00 +0900
+type:           conference
 research_area: dl_sensing
 selected:       false
 pub:            "Proc. International Conference on ICT Convergence (ICTC)"

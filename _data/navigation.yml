@@ -2,7 +2,12 @@ pages:
 - name: HOME
   url: /
 - name: PEOPLE
-  url: /people
+  url: /people/professor/
+  children:
+  - name: Professor
+    url: /people/professor/
+  - name: Researcher
+    url: /people/researcher/
 - name: RESEARCH
   url: /research
 - name: PUBLICATIONS

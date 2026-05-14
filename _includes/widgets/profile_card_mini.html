@@ -1,4 +1,4 @@
-<div class="row sticky-top" style="top: 80px">
+<div class="row sticky-top" style="top: 1.5rem">
     <div class="col">
         <div class="card border-0 shadow-sm bg-white">
             <div class="card-body px-4 pt-4 pb-3">
@@ -26,7 +26,7 @@
                     </div>
                 </div>
 
-                <div class="row small">
+                <div class="row">
                     <div class="col text-center">
                         Dept. of Information and Communication Engineering<br/>
                         <strong>Hanbat National University</strong>
@@ -85,11 +85,37 @@
             <div class="card-body px-4 py-3">
                 <ul class="nav flex-column sidebar-menu">
                     {% for item in site.data.navigation.pages %}
+                        {% if item.children %}
+                            {% assign submenu_id = item.name | downcase | append: "-submenu" %}
+                            {% assign is_active = false %}
+                            {% for child in item.children %}
+                                {% assign child_url = child.url | relative_url %}
+                                {% if child_url == page.url %}{% assign is_active = true %}{% endif %}
+                            {% endfor %}
+                    <li class="nav-item">
+                        <a class="nav-link px-2 py-1 {% if is_active %}active font-weight-bold{% endif %}" href="{{ item.url | relative_url }}">
+                            {{ item.name }}
+                        </a>
+                        {% if is_active %}
+                        <ul class="nav flex-column">
+                            {% for child in item.children %}
+                            {% assign child_url = child.url | relative_url %}
+                            <li class="nav-item">
+                                <a class="nav-link py-1 pl-4 {% if child_url == page.url %}active font-weight-bold{% endif %}" href="{{ child.url | relative_url }}" style="font-size: 0.95em;">
+                                    {{ child.name }}
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </li>
+                        {% else %}
                     <li class="nav-item">
                         <a class="nav-link px-2 py-1 {% if item.name == page.navbar_title %}active font-weight-bold{% endif %}" href="{{ item.url | relative_url }}">
                             {{ item.name }}
                         </a>
                     </li>
+                        {% endif %}
                     {% endfor %}
                 </ul>
             </div>

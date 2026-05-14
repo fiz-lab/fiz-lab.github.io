@@ -7,9 +7,21 @@
     <div class="collapse d-sm-block" id="navbarResponsive">
         <ul class="nav flex-column px-3">
             {% for item in site.data.navigation.pages %}
-            <li class="nav-item {% if item.name == page.navbar_title %}active{% endif %}">
-                <a class="nav-link text-light" href="{{ item.url | relative_url }}">{{ item.name }}</a>
-            </li>
+                {% if item.children %}
+                <li class="nav-item {% if item.name == page.navbar_title %}active{% endif %}">
+                    <span class="nav-link text-light" style="cursor: default;">{{ item.name }}</span>
+                </li>
+                    {% for child in item.children %}
+                    {% assign child_url = child.url | relative_url %}
+                <li class="nav-item pl-3 {% if child_url == page.url %}active{% endif %}">
+                    <a class="nav-link text-light" href="{{ child.url | relative_url }}" style="font-size: 0.95em;">{{ child.name }}</a>
+                </li>
+                    {% endfor %}
+                {% else %}
+                <li class="nav-item {% if item.name == page.navbar_title %}active{% endif %}">
+                    <a class="nav-link text-light" href="{{ item.url | relative_url }}">{{ item.name }}</a>
+                </li>
+                {% endif %}
             {% endfor %}
         </ul>
     </div>

@@ -1,6 +1,7 @@
 ---
 title:          "Deep Reinforcement Learning-based Resource Allocation and Mode Selection for Semantic Communication"
 date:           2024-06-01 00:01:00 +0900
+type:           conference
 research_area: ai_wireless
 selected:       false
 pub:            "International Symposium on Modeling and Optimization in Mobile, Ad Hoc, and Wireless Networks (WiOpt)"

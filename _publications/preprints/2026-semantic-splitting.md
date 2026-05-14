@@ -4,7 +4,7 @@ date:           2026-03-01 00:01:00 +0900
 research_area: ai_wireless
 preprint: true
 selected:       false
-pub:            "IEEE Wireless Communications Letters (WCL), Under review (2nd Round)"
+pub:            "IEEE Wireless Communications Letters (WCL), Minor revision"
 pub_date:       ""
 abstract: ""
 authors:
