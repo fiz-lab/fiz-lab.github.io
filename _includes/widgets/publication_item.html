@@ -7,8 +7,8 @@
     {% assign _peers = site.publications | where_exp: "p", "p.preprint != true" | where: "type", item.type | sort: "date" %}
     {% for _p in _peers %}
         {% if _p.url == item.url %}
-            {% if item.type == "journal" %}{% capture pub_prefix %}<span style="color:#1565c0; font-weight:700;">[J{{ forloop.index }}]</span> {% endcapture %}
-            {% elsif item.type == "conference" %}{% capture pub_prefix %}<span style="color:#2e7d32; font-weight:700;">[C{{ forloop.index }}]</span> {% endcapture %}
+            {% if item.type == "journal" %}{% capture pub_prefix %}<span style="color:#0080ff; font-weight:700;">[J{{ forloop.index }}]</span> {% endcapture %}
+            {% elsif item.type == "conference" %}{% capture pub_prefix %}<span style="color:#00aa3d; font-weight:700;">[C{{ forloop.index }}]</span> {% endcapture %}
             {% endif %}
         {% endif %}
     {% endfor %}

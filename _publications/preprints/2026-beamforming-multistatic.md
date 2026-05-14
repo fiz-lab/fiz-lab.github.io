@@ -6,7 +6,7 @@ research_area:
 - ai_wireless
 preprint: true
 selected:       true
-pub:            "In preparation"
+pub:            "To be submitted"
 pub_date:       ""
 abstract: ""
 authors:
