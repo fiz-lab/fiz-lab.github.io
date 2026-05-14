@@ -7,7 +7,21 @@ navbar_title: RESEARCH
 <div class="row mt-3">
 <div class="col">
 
-{% assign isac_pubs = site.publications | where_exp: "pub", "pub.research_area contains 'isac'" | sort: "date" | reverse %}
+{% assign shown_urls = "|" %}
+{% assign all_pubs = site.publications | sort: "date" | reverse %}
+
+{% assign isac_pubs = "" | split: "" %}
+{% for pub in all_pubs %}
+    {% if pub.research_area contains 'isac' %}
+        {% capture pub_key %}|{{ pub.url }}|{% endcapture %}
+        {% unless shown_urls contains pub_key %}
+            {% if isac_pubs.size < 3 %}
+                {% assign isac_pubs = isac_pubs | push: pub %}
+                {% assign shown_urls = shown_urls | append: pub.url | append: "|" %}
+            {% endif %}
+        {% endunless %}
+    {% endif %}
+{% endfor %}
 <div class="card border-0 shadow-sm bg-white mb-4">
     <div class="card-body p-4">
         <h3 class="text-primary">📡 AI-enabled Integrated Sensing and Communication (ISAC)</h3>
@@ -29,7 +43,18 @@ navbar_title: RESEARCH
     </div>
 </div>
 
-{% assign llm_pubs = site.publications | where_exp: "pub", "pub.research_area contains 'llm'" | sort: "date" | reverse %}
+{% assign llm_pubs = "" | split: "" %}
+{% for pub in all_pubs %}
+    {% if pub.research_area contains 'llm' %}
+        {% capture pub_key %}|{{ pub.url }}|{% endcapture %}
+        {% unless shown_urls contains pub_key %}
+            {% if llm_pubs.size < 3 %}
+                {% assign llm_pubs = llm_pubs | push: pub %}
+                {% assign shown_urls = shown_urls | append: pub.url | append: "|" %}
+            {% endif %}
+        {% endunless %}
+    {% endif %}
+{% endfor %}
 <div class="card border-0 shadow-sm bg-white mb-4">
     <div class="card-body p-4">
         <h3 class="text-primary">🤖 Multimodal Large Language Model (MLLM) for Wireless Communication Networks</h3>
@@ -51,7 +76,18 @@ navbar_title: RESEARCH
     </div>
 </div>
 
-{% assign ai_pubs = site.publications | where_exp: "pub", "pub.research_area contains 'ai_wireless'" | sort: "date" | reverse %}
+{% assign ai_pubs = "" | split: "" %}
+{% for pub in all_pubs %}
+    {% if pub.research_area contains 'ai_wireless' %}
+        {% capture pub_key %}|{{ pub.url }}|{% endcapture %}
+        {% unless shown_urls contains pub_key %}
+            {% if ai_pubs.size < 3 %}
+                {% assign ai_pubs = ai_pubs | push: pub %}
+                {% assign shown_urls = shown_urls | append: pub.url | append: "|" %}
+            {% endif %}
+        {% endunless %}
+    {% endif %}
+{% endfor %}
 <div class="card border-0 shadow-sm bg-white mb-4">
     <div class="card-body p-4">
         <h3 class="text-primary">📶 AI-aided Wireless Communication</h3>
@@ -70,7 +106,18 @@ navbar_title: RESEARCH
     </div>
 </div>
 
-{% assign dl_pubs = site.publications | where_exp: "pub", "pub.research_area contains 'dl_sensing'" | sort: "date" | reverse %}
+{% assign dl_pubs = "" | split: "" %}
+{% for pub in all_pubs %}
+    {% if pub.research_area contains 'dl_sensing' %}
+        {% capture pub_key %}|{{ pub.url }}|{% endcapture %}
+        {% unless shown_urls contains pub_key %}
+            {% if dl_pubs.size < 3 %}
+                {% assign dl_pubs = dl_pubs | push: pub %}
+                {% assign shown_urls = shown_urls | append: pub.url | append: "|" %}
+            {% endif %}
+        {% endunless %}
+    {% endif %}
+{% endfor %}
 <div class="card border-0 shadow-sm bg-white mb-4">
     <div class="card-body p-4">
         <h3 class="text-primary">🎯 Deep Learning-based Sensing</h3>
