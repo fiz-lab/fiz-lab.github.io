@@ -1,5 +1,5 @@
 ---
-title:          "Large Multimodal Models-Empowered Task-Oriented Autonomous Communications: Design Methodology and Implementation Challenges"
+title:          "Large Multimodal Model-Empowered Task-Oriented Autonomous Communications: Design Methodology and Implementation Challenges"
 date:           2025-10-01 00:01:00 +0900
 type:           journal
 research_area:
