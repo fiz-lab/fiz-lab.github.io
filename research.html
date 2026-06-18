@@ -45,7 +45,7 @@ navbar_title: RESEARCH
 
 {% assign llm_pubs = "" | split: "" %}
 {% for pub in all_pubs %}
-    {% if pub.research_area contains 'llm' %}
+    {% if pub.research_area contains 'mllm' %}
         {% capture pub_key %}|{{ pub.url }}|{% endcapture %}
         {% unless shown_urls contains pub_key %}
             {% if llm_pubs.size < 3 %}
