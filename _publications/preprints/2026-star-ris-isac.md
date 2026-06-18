@@ -4,7 +4,7 @@ date:           2026-02-15 00:01:00 +0900
 research_area: isac
 preprint: true
 selected:       true
-pub:            "Submitted to IEEE Transactions on Mobile Computing (TMC)"
+pub:            "IEEE Internet of Things Journal (IoTJ), Major revision"
 pub_date:       ""
 abstract: ""
 authors:
