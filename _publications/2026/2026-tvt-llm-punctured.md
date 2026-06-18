@@ -3,7 +3,7 @@ title:          "Robust Transmission of Punctured Text with Large Language Model
 date:           2026-01-15 00:01:00 +0900
 type:           journal
 research_area:
-- llm
+- mllm
 - ai_wireless
 selected:       false
 pub:            "IEEE Transactions on Vehicular Technology (TVT), vol. 75, no. 1, pp. 1737-1742, Jan. 2026"

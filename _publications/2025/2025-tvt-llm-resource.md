@@ -3,7 +3,7 @@ title:          "Adaptive Resource Allocation Optimization Using Large Language 
 date:           2025-08-01 00:01:00 +0900
 type:           journal
 research_area:
-- llm
+- mllm
 - ai_wireless
 selected:       true
 pub:            "IEEE Transactions on Vehicular Technology (TVT), vol. 74, no. 10, pp. 16630-16635, Oct. 2025"

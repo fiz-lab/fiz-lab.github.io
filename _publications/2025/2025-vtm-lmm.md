@@ -3,7 +3,7 @@ title:          "Large Multimodal Model-Empowered Task-Oriented Autonomous Commu
 date:           2025-10-01 00:01:00 +0900
 type:           journal
 research_area:
-- llm
+- mllm
 - ai_wireless
 selected:       true
 pub:            "IEEE Vehicular Technology Magazine (VTM), accepted"
