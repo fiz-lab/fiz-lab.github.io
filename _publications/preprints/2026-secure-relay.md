@@ -1,7 +1,9 @@
 ---
 title:          "Secure Multi-Hop Relaying in Large-Scale Space-Air-Ground-Sea Integrated Networks"
 date:           2026-11-01 00:01:00 +0900
-research_area: 6g_network
+research_area:
+- 6g_network
+- ai_wireless
 preprint: true
 selected:       false
 pub:            "Submitted to IEEE Transactions on Wireless Communications (TWC)"
