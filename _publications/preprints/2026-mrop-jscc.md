@@ -5,7 +5,7 @@ research_area:
 - ai_wireless
 preprint: true
 selected:       false
-pub:            "Under review"
+pub:            "Submitted to IEEE Transactions on Vehicular Technology (TVT)"
 pub_date:       ""
 abstract: ""
 authors:
