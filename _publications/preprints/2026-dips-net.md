@@ -11,5 +11,6 @@ pub_date:       ""
 abstract: ""
 authors:
 - Hyeonho Noh
+- Hyun Jong Yang
 links:
 ---
