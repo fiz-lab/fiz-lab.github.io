@@ -1,5 +1,5 @@
 ---
-title:          "Secure Multi-Hop Relaying in Large-Scale Space-Air-Ground-Sea Integrated Networks"
+title:          "LOAD: Load-Aware Dual-Price GNN Routing for Cross-Layer Secure Relay in Multi-Layer NTN"
 date:           2026-11-01 00:01:00 +0900
 research_area:
 - 6g_network
