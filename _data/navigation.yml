@@ -6,8 +6,8 @@ pages:
   children:
   - name: Professor
     url: /people/professor/
-  - name: Researcher
-    url: /people/researcher/
+  # - name: Researcher
+  #   url: /people/researcher/
 - name: RESEARCH
   url: /research
 - name: PUBLICATIONS
