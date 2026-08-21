@@ -6,7 +6,7 @@ research_area:
 - ai_wireless
 preprint: true
 selected:       false
-pub:            "In preparation"
+pub:            "Submitted to IEEE Transactions on Wireless Communications (TWC)"
 pub_date:       ""
 abstract: ""
 authors:
