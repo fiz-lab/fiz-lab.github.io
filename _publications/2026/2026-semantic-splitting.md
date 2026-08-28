@@ -1,10 +1,11 @@
 ---
 title:          "Group-wise Semantic Splitting Multiple Access for Multi-User Semantic Communication"
-date:           2026-03-01 00:01:00 +0900
+date:           2026-08-28 00:01:00 +0900
+type:           journal
 research_area: ai_wireless
-preprint: true
+preprint: false
 selected:       false
-pub:            "IEEE Wireless Communications Letters (WCL), Minor revision"
+pub:            "IEEE Wireless Communications Letters (WCL), accepted"
 pub_date:       ""
 abstract: ""
 authors:
