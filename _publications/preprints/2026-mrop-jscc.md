@@ -1,6 +1,6 @@
 ---
 title:          "MROP: Mask-Region Optimized Purification for Backdoor Defense in Deep JSCC"
-date:           2026-06-23 00:01:00 +0900
+date:           2026-07-04 00:01:00 +0900
 research_area:
 - ai_wireless
 preprint: true

@@ -1,6 +1,6 @@
 ---
 title:          "Vision-Language Model Driven Beam Selection for Multi-RIS-Aided MU-MIMO ISAC Systems"
-date:           2026-04-18 00:01:00 +0900
+date:           2026-09-01 00:01:00 +0900
 research_area:
 - isac
 - mllm

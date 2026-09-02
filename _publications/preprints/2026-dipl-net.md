@@ -1,6 +1,6 @@
 ---
 title:          "Dispersion-aware Localization Network for Wideband OFDM Pinching-Antenna Integrated Sensing and Communication Systems"
-date:           2026-05-29 00:01:00 +0900
+date:           2026-07-03 00:01:00 +0900
 research_area:
 - isac
 - ai_wireless

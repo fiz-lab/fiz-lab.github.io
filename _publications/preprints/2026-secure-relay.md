@@ -1,6 +1,6 @@
 ---
 title:          "LOAD: Load-Aware Dual-Price GNN Routing for Cross-Layer Secure Relay in Multi-Layer NTN"
-date:           2026-11-01 00:01:00 +0900
+date:           2026-07-05 00:01:00 +0900
 research_area:
 - 6g_network
 - ai_wireless

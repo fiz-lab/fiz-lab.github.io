@@ -1,6 +1,6 @@
 ---
 title:          "Beamforming Optimization and Feedback Allocation for Multistatic Multi-User MIMO-OFDM ISAC Systems"
-date:           2026-04-01 00:01:00 +0900
+date:           2026-08-01 00:01:00 +0900
 research_area:
 - isac
 - ai_wireless
