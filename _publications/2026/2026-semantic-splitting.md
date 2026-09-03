@@ -13,5 +13,5 @@ authors:
 - Hyeonho Noh#
 - Hyun Jong Yang
 links:
-  PDF: https://arxiv.org/abs/2511.21411
+  PDF: https://ieeexplore.ieee.org/document/11676107
 ---
