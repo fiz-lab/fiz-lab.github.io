@@ -7,14 +7,44 @@ body_attr: >-
 ---
 
 {% assign preprints = site.publications | sort: "date" | reverse | where: "preprint", true %}
+{% comment %}
+    Preprints are grouped by submission status so that anything already out for
+    review sinks to the bottom of the section. The status is read off the first
+    word of "pub", so "Submitted" and "Submitted to <journal>" land in the
+    submitted group while "In preparation" and "To be submitted" stay above it.
+    Within each group the newest date still comes first.
+{% endcomment %}
+{% assign preprint_passes = "pending,submitted" | split: "," %}
 {% assign published = site.publications | sort: "date" | reverse | where_exp: "pub", "pub.preprint != true" %}
 {% assign published_by_year = published | group_by_exp: "item", "item.date | date: '%Y'" %}
 
 {% if preprints.size > 0 %}
 <h2 class="pt-4">Preprints</h2>
 <div class="my-0 p-0 bg-white shadow-sm rounded-xl">
-    {% for item in preprints %}
-        {% include widgets/publication_item.html item=item hide_bottom_border=forloop.last first=forloop.first last=forloop.last %}
+    {% assign preprints_rendered = 0 %}
+    {% for pass in preprint_passes %}
+        {% for item in preprints %}
+            {% assign pub_head = item.pub | truncate: 9, "" %}
+            {% if pub_head == "Submitted" %}
+                {% assign item_pass = "submitted" %}
+            {% else %}
+                {% assign item_pass = "pending" %}
+            {% endif %}
+            {% if item_pass == pass %}
+                {% assign preprints_rendered = preprints_rendered | plus: 1 %}
+                {% if preprints_rendered == 1 %}
+                    {% assign is_first = true %}
+                {% else %}
+                    {% assign is_first = false %}
+                {% endif %}
+                {% if preprints_rendered == preprints.size %}
+                    {% assign is_last = true %}
+                {% else %}
+                    {% assign is_last = false %}
+                {% endif %}
+                {% include widgets/publication_item.html item=item hide_bottom_border=is_last first=is_first last=is_last %}
+            {% endif %}
+        {% endfor %}
     {% endfor %}
 </div>
 {% endif %}

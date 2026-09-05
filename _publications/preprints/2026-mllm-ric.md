@@ -6,7 +6,7 @@ research_area:
 - ai_wireless
 preprint: true
 selected:       false
-pub:            "Submitted"
+pub:            "Submitted to IEEE Journal on Selected Areas in Communications (JSAC)"
 pub_date:       ""
 abstract: ""
 authors:
