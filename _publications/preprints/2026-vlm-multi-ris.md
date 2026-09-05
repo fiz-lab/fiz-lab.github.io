@@ -3,7 +3,6 @@ title:          "Vision-Language Model Driven Beam Selection for Multi-RIS-Aided
 date:           2026-09-01 00:01:00 +0900
 research_area:
 - isac
-- mllm
 - ai_wireless
 preprint: true
 selected:       false

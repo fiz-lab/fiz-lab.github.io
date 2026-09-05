@@ -3,6 +3,7 @@ title:          "Multimodal Large Language Model-guided Constrained Optimization
 date:           2026-09-02 00:01:00 +0900
 research_area:
 - 6g_network
+- mllm
 - ai_wireless
 preprint: true
 selected:       false
