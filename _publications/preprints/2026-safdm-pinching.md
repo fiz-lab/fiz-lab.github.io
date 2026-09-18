@@ -12,4 +12,5 @@ abstract: ""
 authors:
 - Hyeonho Noh
 links:
+  PDF: https://arxiv.org/abs/2609.20343
 ---
