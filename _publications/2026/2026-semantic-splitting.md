@@ -5,7 +5,7 @@ type:           journal
 research_area: ai_wireless
 preprint: false
 selected:       false
-pub:            "IEEE Wireless Communications Letters (WCL), accepted"
+pub:            "IEEE Wireless Communications Letters (WCL), vol. 15, pp. 5194-5198, 2026"
 pub_date:       ""
 abstract: ""
 authors:
