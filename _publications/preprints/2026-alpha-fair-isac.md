@@ -1,10 +1,10 @@
 ---
-title:          "α-Fair Multistatic ISAC Beamforming for Multi-User MIMO-OFDM Systems via Riemannian Optimization"
-date:           2026-07-01 00:01:00 +0900
+title:          "Fairness-Aware Multistatic ISAC Beamforming for Multi-User MIMO-OFDM Systems via Riemannian Optimization"
+date:           2026-10-01 00:01:00 +0900
 research_area: isac
 preprint: true
 selected:       true
-pub:            "Submitted to IEEE Transactions on Vehicular Technology (TVT)"
+pub:            "Submitted"
 pub_date:       ""
 abstract: ""
 authors:
