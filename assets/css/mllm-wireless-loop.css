@@ -1,0 +1,176 @@
+/* FIZLab research figure. All selectors are scoped to the component. */
+.fiz-loop {
+  --fl-navy: #172c50;
+  --fl-blue: #246bc5;
+  --fl-purple: #7054b2;
+  --fl-green: #238266;
+  --fl-muted: #5b6a80;
+  --fl-line: #d7e0ec;
+  --fl-period: 11.5s;
+  margin: 0;
+  padding: 24px clamp(9px, 2vw, 20px) 14px;
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  color: var(--fl-navy);
+  font-family: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.45;
+  text-align: left;
+  border: 1px solid #e4e9f1;
+  border-radius: 12px;
+  color-scheme: light;
+}
+.fiz-loop *, .fiz-loop *::before, .fiz-loop *::after { box-sizing: border-box; }
+.fiz-loop .fl-top { display: flex; justify-content: space-between; gap: 16px; align-items: center; padding: 0 8px 13px; }
+.fiz-loop .fl-kicker { display: block; color: var(--fl-blue); font-size: 10px; font-weight: 700; letter-spacing: .15em; margin-bottom: 5px; }
+.fiz-loop .fl-heading { display: block; font-size: clamp(18px, 2.2vw, 24px); font-weight: 700; line-height: 1.25; }
+.fiz-loop .fl-play { display: inline-flex; flex-shrink: 0; align-items: center; justify-content: center; gap: 7px; min-height: 44px; padding: 8px 11px; color: var(--fl-muted); background: #fff; border: 1px solid var(--fl-line); border-radius: 7px; font: inherit; font-size: 12px; cursor: pointer; }
+.fiz-loop .fl-play:hover { color: var(--fl-blue); border-color: var(--fl-blue); }
+.fiz-loop .fl-play:focus-visible { outline: 3px solid var(--fl-blue); outline-offset: 3px; }
+.fiz-loop .fl-play[hidden] { display: none; }
+.fiz-loop .fl-play svg { width: 12px; height: 12px; fill: currentColor; }
+.fiz-loop .fl-play .fl-play-icon { display: none; }
+.fiz-loop[data-paused="true"] .fl-pause-icon { display: none; }
+.fiz-loop[data-paused="true"] .fl-play-icon { display: block; }
+.fiz-loop .fl-diagram { display: block; width: 100%; height: auto; overflow: visible; }
+.fiz-loop .fl-diagram text { font-family: inherit; }
+.fiz-loop .fl-node { --fl-accent: var(--fl-blue); }
+.fiz-loop .fl-cognitive { --fl-accent: var(--fl-purple); }
+.fiz-loop .fl-card { fill: #fff; stroke: var(--fl-line); stroke-width: 1; }
+.fiz-loop .fl-card-wash { fill: var(--fl-accent); opacity: .025; }
+.fiz-loop .fl-focus { fill: none; stroke: var(--fl-accent); stroke-width: 1.7; opacity: 0; }
+.fiz-loop .fl-number { fill: var(--fl-muted); font-size: 10px; letter-spacing: .04em; }
+.fiz-loop .fl-title { fill: var(--fl-navy); font-size: var(--fl-title-size, 18px); font-weight: 700; }
+.fiz-loop .fl-detail { fill: var(--fl-muted); font-size: 12px; }
+.fiz-loop .fl-ink { fill: none; stroke: var(--fl-accent); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.fiz-loop .fl-quiet { stroke: #aebed3; }
+.fiz-loop .fl-surface { fill: #f1f5fb; }
+.fiz-loop .fl-solid { fill: var(--fl-accent); stroke: none; }
+.fiz-loop .fl-soft { fill: var(--fl-accent); fill-opacity: .10; }
+.fiz-loop .fl-white { fill: #fff; }
+.fiz-loop .fl-grid { fill: none; stroke: #dbe4ef; stroke-width: 1; }
+.fiz-loop .fl-symbol-text { fill: var(--fl-accent); stroke: none; font-size: 18px; font-weight: 600; }
+.fiz-loop .fl-small-symbol-text { fill: var(--fl-accent); stroke: none; font-size: 13px; }
+.fiz-loop .fl-link { fill: none; stroke: #afbed1; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; }
+.fiz-loop .fl-feedback { stroke: var(--fl-blue); stroke-opacity: .45; }
+.fiz-loop .fl-secondary { fill: none; stroke: var(--fl-purple); stroke-width: 1; stroke-dasharray: 3 5; opacity: .5; }
+.fiz-loop .fl-path-label { fill: var(--fl-muted); font-size: 11px; letter-spacing: .01em; }
+.fiz-loop .fl-label-bg { fill: #fff; }
+.fiz-loop .fl-packet { fill: none; stroke: var(--fl-blue); stroke-width: 2.6; stroke-linecap: round; stroke-dasharray: .075 1; stroke-dashoffset: .08; opacity: 0; }
+.fiz-loop .fl-purple-packet { stroke: var(--fl-purple); }
+.fiz-loop .fl-check { fill: none; stroke: var(--fl-green); stroke-width: 2.8; stroke-linecap: round; stroke-linejoin: round; opacity: .22; }
+.fiz-loop .fl-check-bg { fill: #eaf5ef; stroke: #b9d8cc; stroke-width: 1; }
+.fiz-loop .fl-beam { fill: var(--fl-blue); opacity: .16; }
+.fiz-loop .fl-cell { fill: var(--fl-blue); opacity: .18; }
+.fiz-loop .fl-twin-layer { opacity: .36; }
+.fiz-loop .fl-reason-dot { fill: var(--fl-purple); opacity: .18; }
+.fiz-loop .fl-node:not(.fl-cognitive) .fl-reason-dot { fill: var(--fl-blue); }
+.fiz-loop .fl-draw { fill: none; stroke: var(--fl-accent); stroke-width: 2; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 0; opacity: .4; }
+.fiz-loop .fl-sweep { fill: #dcecff; opacity: 0; }
+.fiz-loop .fl-ring { fill: none; stroke: var(--fl-blue); stroke-width: 1.5; opacity: 0; transform-box: fill-box; transform-origin: center; }
+.fiz-loop .fl-footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 7px 18px; padding: 10px 8px 0; border-top: 1px solid #edf0f5; color: var(--fl-muted); font-size: 11px; }
+.fiz-loop .fl-legend { display: flex; flex-wrap: wrap; gap: 14px; }
+.fiz-loop .fl-legend span { display: inline-flex; align-items: center; gap: 5px; }
+.fiz-loop .fl-legend i { display: inline-block; width: 13px; height: 2px; background: var(--fl-blue); }
+.fiz-loop .fl-legend .fl-purple { background: var(--fl-purple); }
+.fiz-loop .fl-legend .fl-green { background: var(--fl-green); height: 6px; width: 6px; border-radius: 50%; }
+.fiz-loop .fl-note { white-space: nowrap; }
+.fiz-loop .fl-motion { animation-duration: var(--fl-period); animation-delay: var(--fl-at, 0s); animation-iteration-count: infinite; animation-timing-function: linear; }
+.fiz-loop:not([data-initialized="true"]) .fl-motion { animation: none !important; }
+.fiz-loop .fl-focus.fl-motion { animation-name: fl-focus; }
+.fiz-loop .fl-packet.fl-motion { animation-name: fl-packet; }
+.fiz-loop .fl-ring.fl-motion { animation-name: fl-ring; }
+.fiz-loop .fl-check.fl-motion { animation-name: fl-check; }
+.fiz-loop .fl-beam.fl-motion { animation-name: fl-beam; }
+.fiz-loop .fl-cell.fl-motion, .fiz-loop .fl-reason-dot.fl-motion { animation-name: fl-fill; }
+.fiz-loop .fl-twin-layer.fl-motion { animation-name: fl-overlay; }
+.fiz-loop .fl-draw.fl-motion { animation-name: fl-draw; }
+.fiz-loop .fl-sweep.fl-motion { animation-name: fl-sweep; }
+.fiz-loop[data-paused="true"] .fl-motion, .fiz-loop[data-suspended="true"] .fl-motion { animation-play-state: paused; }
+.fiz-loop[data-layout="compact"] { padding-top: 16px; padding-bottom: 12px; }
+.fiz-loop[data-layout="compact"] .fl-top { padding: 0 3px 10px; gap: 8px; }
+.fiz-loop[data-layout="compact"] .fl-heading { font-size: 17px; }
+.fiz-loop[data-layout="compact"] .fl-kicker { font-size: 9px; }
+.fiz-loop[data-layout="compact"] .fl-title { font-size: var(--fl-small-title, 13px); }
+.fiz-loop[data-layout="compact"] .fl-detail { font-size: 10.5px; }
+.fiz-loop[data-columns="1"] .fl-detail { font-size: 12px; }
+.fiz-loop[data-layout="compact"] .fl-number { font-size: 8px; }
+.fiz-loop[data-layout="compact"] .fl-play { font-size: 11px; padding: 8px; }
+.fiz-loop[data-layout="compact"] .fl-footer { padding-inline: 3px; font-size: 10px; }
+.fiz-loop[data-layout="compact"] .fl-legend { gap: 9px; }
+@keyframes fl-focus { 0%, 12%, 100% { opacity: 0; } 2%, 8% { opacity: 1; } }
+@keyframes fl-packet { 0% { opacity: 0; stroke-dashoffset: .08; } 1% { opacity: 1; } 9% { opacity: 1; stroke-dashoffset: -1; } 10%, 100% { opacity: 0; stroke-dashoffset: -1; } }
+@keyframes fl-ring { 0% { opacity: 0; transform: scale(.6); } 1% { opacity: .7; } 9%, 100% { opacity: 0; transform: scale(2.5); } }
+@keyframes fl-check { 0%, 3%, 22%, 100% { opacity: .22; } 5%, 17% { opacity: 1; } }
+@keyframes fl-beam { 0%, 13%, 100% { opacity: .16; } 3%, 9% { opacity: .38; } }
+@keyframes fl-fill { 0%, 12%, 100% { opacity: .18; } 3%, 8% { opacity: 1; } }
+@keyframes fl-overlay { 0%, 14%, 100% { opacity: .36; } 4%, 9% { opacity: 1; } }
+@keyframes fl-draw { 0% { opacity: .35; stroke-dashoffset: 1; } 7% { opacity: 1; stroke-dashoffset: 0; } 13%, 100% { opacity: .4; stroke-dashoffset: 0; } }
+@keyframes fl-sweep { 0% { opacity: 0; transform: translateX(0); } 1% { opacity: .55; } 10% { opacity: 0; transform: translateX(164px); } 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .fiz-loop .fl-motion { animation: none !important; }
+  .fiz-loop .fl-packet, .fiz-loop .fl-ring, .fiz-loop .fl-focus, .fiz-loop .fl-sweep { opacity: 0; }
+  .fiz-loop .fl-check, .fiz-loop .fl-twin-layer { opacity: 1; }
+  .fiz-loop .fl-reason-dot { opacity: .7; }
+  .fiz-loop .fl-play { display: none; }
+}
+@media print {
+  .fiz-loop { break-inside: avoid; border: 0; padding: 0; }
+  .fiz-loop .fl-motion { animation: none !important; }
+  .fiz-loop .fl-packet, .fiz-loop .fl-ring, .fiz-loop .fl-focus, .fiz-loop .fl-sweep, .fiz-loop .fl-play { display: none; }
+  .fiz-loop .fl-check, .fiz-loop .fl-twin-layer { opacity: 1; }
+}
+
+
+.fiz-loop .fl-target-beam { fill:var(--fl-blue); opacity:.07; }
+.fiz-loop .fl-target-beam.fl-motion { animation-name:fl-transmit; }
+.fiz-loop .fl-direct-base { fill:none; stroke:var(--fl-blue); stroke-width:1; opacity:.26; }
+.fiz-loop .fl-direct-packet { stroke-width:2.8; }
+.fiz-loop .fl-reflection-base { fill:none; stroke:var(--fl-purple); stroke-width:1; stroke-dasharray:3 3; opacity:.32; }
+.fiz-loop .fl-reflection-packet { stroke:var(--fl-purple); stroke-width:2.2; }
+@keyframes fl-transmit { 0%, 12%, 100% { opacity:.07; } 2%, 8% { opacity:.22; } }
+
+/* Soft light along the whole propagation path, with no moving dash or dot. */
+.fiz-loop .fl-direct-glow, .fiz-loop .fl-reflection-glow {
+  fill:none; stroke:#8fbdf0; stroke-width:4; stroke-linecap:round;
+  stroke-linejoin:round; opacity:.08; stroke-dasharray:none;
+}
+.fiz-loop .fl-reflection-glow { stroke:#b7a6df; stroke-width:3; }
+.fiz-loop .fl-direct-glow.fl-motion, .fiz-loop .fl-reflection-glow.fl-motion {
+  animation-name:fl-soft-transmission; animation-timing-function:ease-in-out;
+}
+.fiz-loop .fl-target-beam { fill:#9bc5f1; }
+@keyframes fl-soft-transmission {
+  0%, 15%, 100% { opacity:.06; }
+  5%, 8% { opacity:.4; }
+}
+
+
+
+/* A short straight segment moves from source to receiver. */
+.fiz-loop .fl-signal-segment { fill:none; stroke:#3888dc; stroke-width:1.8; opacity:.6; stroke-linecap:round; stroke-linejoin:round; }
+.fiz-loop .fl-reflected-signal { stroke:#9475c5; stroke-width:1.6; }
+.fiz-loop .fl-signal-segment.fl-motion { animation-name:fl-signal-segment; animation-timing-function:linear; }
+@keyframes fl-signal-segment {
+  0% { transform:translateX(0); opacity:0; }
+  1% { opacity:.9; }
+  7.2% { opacity:.9; }
+  8.26%, 100% { transform:translateX(var(--fl-travel)); opacity:0; }
+}
+
+/* White material surfaces blend with the photographic assets. */
+.fiz-loop .fl-card { fill:#fff; }
+.fiz-loop .fl-card-wash { opacity:0; }
+.fiz-loop .fl-signal-segment { stroke:#246bc5; stroke-width:2; }
+.fiz-loop .fl-reflected-signal { stroke:#7853af; stroke-width:1.8; }
+
+/* Explicit input -> robot activation -> output sequence at stage 04. */
+.fiz-loop .fl-model-flow { fill:none; stroke:#7054b2; stroke-width:2.6; stroke-linecap:round; stroke-dasharray:.23 1; stroke-dashoffset:.24; opacity:0; }
+.fiz-loop .fl-model-flow.fl-motion { animation-name:fl-model-flow; }
+.fiz-loop .fl-robot-active.fl-motion { animation-name:fl-robot-active; transform-origin:0 0; animation-timing-function:ease-in-out; }
+.fiz-loop .fl-model-halo { fill:#e3d9f5; stroke:#a88aca; stroke-width:1; opacity:0; }
+.fiz-loop .fl-model-halo.fl-motion { animation-name:fl-model-halo; }
+@keyframes fl-model-flow { 0% {opacity:0;stroke-dashoffset:.24} .4% {opacity:1} 3.5% {opacity:1;stroke-dashoffset:-1} 4%,100% {opacity:0;stroke-dashoffset:-1} }
+@keyframes fl-robot-active { 0%,7%,100% {transform:translateY(0) scale(1)} 2%,4% {transform:translateY(-3px) scale(1.07)} }
+@keyframes fl-model-halo { 0%,7%,100% {opacity:0} 2%,4% {opacity:.8} }
