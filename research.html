@@ -10,6 +10,39 @@ navbar_title: RESEARCH
 {% assign shown_urls = "|" %}
 {% assign all_pubs = site.publications | sort: "date" | reverse %}
 
+{% assign llm_pubs = "" | split: "" %}
+{% for pub in all_pubs %}
+    {% if pub.research_area contains 'mllm' %}
+        {% capture pub_key %}|{{ pub.url }}|{% endcapture %}
+        {% unless shown_urls contains pub_key %}
+            {% if llm_pubs.size < 3 %}
+                {% assign llm_pubs = llm_pubs | push: pub %}
+                {% assign shown_urls = shown_urls | append: pub.url | append: "|" %}
+            {% endif %}
+        {% endunless %}
+    {% endif %}
+{% endfor %}
+<div class="card border-0 shadow-sm bg-white mb-4">
+    <div class="card-body p-4">
+        <h3 class="text-primary">🤖 Multimodal Large Language Model (MLLM) for Wireless Communication Networks</h3>
+        <hr/>
+        <div class="mb-3">
+            {% include mllm_wireless_loop.html %}
+        </div>
+        <p>
+            멀티모달 거대언어모델(MLLM)이 센싱·채널·사용자 의도를 종합적으로 추론하여 차세대 무선망을 자율적으로 최적화하고 제어하는 연구를 수행합니다.
+        </p>
+        {% if llm_pubs.size > 0 %}
+        <p><strong class="text-primary">Related Publications:</strong></p>
+        <ul>
+            {% for pub in llm_pubs limit:3 %}
+            <li>{{ pub.title }}, <em>{% include widgets/pub_styled.html pub=pub.pub %}</em></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</div>
+
 {% assign isac_pubs = "" | split: "" %}
 {% for pub in all_pubs %}
     {% if pub.research_area contains 'isac' %}
@@ -36,39 +69,6 @@ navbar_title: RESEARCH
         <p><strong class="text-primary">Related Publications:</strong></p>
         <ul>
             {% for pub in isac_pubs limit:3 %}
-            <li>{{ pub.title }}, <em>{% include widgets/pub_styled.html pub=pub.pub %}</em></li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-    </div>
-</div>
-
-{% assign llm_pubs = "" | split: "" %}
-{% for pub in all_pubs %}
-    {% if pub.research_area contains 'mllm' %}
-        {% capture pub_key %}|{{ pub.url }}|{% endcapture %}
-        {% unless shown_urls contains pub_key %}
-            {% if llm_pubs.size < 3 %}
-                {% assign llm_pubs = llm_pubs | push: pub %}
-                {% assign shown_urls = shown_urls | append: pub.url | append: "|" %}
-            {% endif %}
-        {% endunless %}
-    {% endif %}
-{% endfor %}
-<div class="card border-0 shadow-sm bg-white mb-4">
-    <div class="card-body p-4">
-        <h3 class="text-primary">🤖 Multimodal Large Language Model (MLLM) for Wireless Communication Networks</h3>
-        <hr/>
-        <div class="mb-3">
-            {% include mllm_wireless_loop.html %}
-        </div>
-        <p>
-            Our lab explores Multimodal Large Language Models (MLLMs) as intelligent orchestrators for next-generation wireless communication networks. By jointly reasoning over heterogeneous inputs—channel measurements, sensing signals, user context, and natural-language intents—MLLMs can interpret complex network states, predict resource demands, and autonomously generate control strategies across multiple layers of the wireless stack.
-        </p>
-        {% if llm_pubs.size > 0 %}
-        <p><strong class="text-primary">Related Publications:</strong></p>
-        <ul>
-            {% for pub in llm_pubs limit:3 %}
             <li>{{ pub.title }}, <em>{% include widgets/pub_styled.html pub=pub.pub %}</em></li>
             {% endfor %}
         </ul>

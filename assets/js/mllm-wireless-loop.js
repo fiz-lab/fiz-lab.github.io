@@ -38,9 +38,6 @@
     const nodes = [...root.querySelectorAll('.fl-node')];
     const links = root.querySelector('.fl-links');
     const labels = root.querySelector('.fl-path-labels');
-    const button = root.querySelector('.fl-play');
-    const buttonLabel = root.querySelector('.fl-button-label');
-    const note = root.querySelector('.fl-note');
     const reduce = matchMedia('(prefers-reduced-motion: reduce)');
     let lastWidth = -1;
     let offscreen = false;
@@ -203,20 +200,6 @@
     }
 
     function suspended() { root.dataset.suspended = String(document.hidden || offscreen); }
-    function motionPreference() {
-      button.hidden = reduce.matches;
-      note.textContent = reduce.matches ? 'Static view · reduced motion' : '11.5 s conceptual cycle';
-    }
-    button.hidden = false;
-    button.addEventListener('click', () => {
-      const paused = root.dataset.paused !== 'true';
-      root.dataset.paused = String(paused);
-      button.setAttribute('aria-pressed', String(paused));
-      button.setAttribute('aria-label', paused ? 'Resume workflow animation' : 'Pause workflow animation');
-      buttonLabel.textContent = paused ? 'Play' : 'Pause';
-    });
-    if (reduce.addEventListener) reduce.addEventListener('change', motionPreference);
-    motionPreference();
     if ('ResizeObserver' in window) new ResizeObserver(layout).observe(svg);
     else window.addEventListener('resize', layout, { passive: true });
     if ('IntersectionObserver' in window) new IntersectionObserver(entries => {
