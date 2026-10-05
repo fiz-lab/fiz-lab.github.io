@@ -45,7 +45,7 @@ navbar_title: RESEARCH
 
 {% assign isac_pubs = "" | split: "" %}
 {% for pub in all_pubs %}
-    {% if pub.research_area contains 'isac' %}
+    {% if pub.research_area contains 'isac' or pub.research_area contains 'ai_wireless' %}
         {% capture pub_key %}|{{ pub.url }}|{% endcapture %}
         {% unless shown_urls contains pub_key %}
             {% if isac_pubs.size < 3 %}
@@ -57,51 +57,18 @@ navbar_title: RESEARCH
 {% endfor %}
 <div class="card border-0 shadow-sm bg-white mb-4">
     <div class="card-body p-4">
-        <h3 class="text-primary">📡 AI-enabled Integrated Sensing and Communication (ISAC)</h3>
+        <h3 class="text-primary">📡 AI-enabled ISAC and Wireless Communication</h3>
         <hr/>
         <div class="mb-3">
-            <img src="{{ '/assets/images/covers/research_ISAC.png' | relative_url }}" class="img-fluid rounded w-100" alt="ISAC">
+            {% include isac_ai_comm_loop.html %}
         </div>
         <p>
-            Our lab explores AI-enabled integrated approaches that unify physical-layer sensing, high-speed communication, and distributed computation. By developing novel PHY/MAC algorithms and scalable protocols, we aim to achieve systems that can dynamically adapt to their environment, optimize resource utilization, and enable seamless interaction among connected intelligent devices.
+            AI가 센싱 정보와 네트워크 상태를 함께 활용하여 통신과 센싱을 통합 설계하고, 빔포밍·자원 할당·간섭 제어 등을 환경에 맞게 적응적으로 최적화하는 연구를 수행합니다.
         </p>
         {% if isac_pubs.size > 0 %}
         <p><strong class="text-primary">Related Publications:</strong></p>
         <ul>
             {% for pub in isac_pubs limit:3 %}
-            <li>{{ pub.title }}, <em>{% include widgets/pub_styled.html pub=pub.pub %}</em></li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-    </div>
-</div>
-
-{% assign ai_pubs = "" | split: "" %}
-{% for pub in all_pubs %}
-    {% if pub.research_area contains 'ai_wireless' %}
-        {% capture pub_key %}|{{ pub.url }}|{% endcapture %}
-        {% unless shown_urls contains pub_key %}
-            {% if ai_pubs.size < 3 %}
-                {% assign ai_pubs = ai_pubs | push: pub %}
-                {% assign shown_urls = shown_urls | append: pub.url | append: "|" %}
-            {% endif %}
-        {% endunless %}
-    {% endif %}
-{% endfor %}
-<div class="card border-0 shadow-sm bg-white mb-4">
-    <div class="card-body p-4">
-        <h3 class="text-primary">📶 AI-aided Wireless Communication</h3>
-        <hr/>
-        <div class="mb-3">
-            <img src="{{ '/assets/images/covers/research_AI_comm.png' | relative_url }}" class="img-fluid rounded w-100" alt="AI-aided Wireless Communication">
-        </div>
-        <p>
-            Our research focuses on making artificial intelligence a central component in the design, optimization, and management of next-generation wireless networks. By leveraging machine learning and large-scale AI models, we aim to build systems that can sense their environment, anticipate traffic and resource demands, and adapt communication strategies in real time. Through this approach, our lab is working to create wireless technologies that are not only more efficient, but also more resilient and scalable across all layers of the wireless stack.
-        </p>
-        {% if ai_pubs.size > 0 %}
-        <p><strong class="text-primary">Related Publications:</strong></p>
-        <ul>
-            {% for pub in ai_pubs limit:3 %}
             <li>{{ pub.title }}, <em>{% include widgets/pub_styled.html pub=pub.pub %}</em></li>
             {% endfor %}
         </ul>
