@@ -87,7 +87,7 @@ navbar_title: RESEARCH
         <h3 class="text-primary">🎯 Deep Learning-based Sensing</h3>
         <hr/>
         <div class="mb-3">
-            <img src="{{ '/assets/images/covers/research_sensing.png' | relative_url }}" class="img-fluid rounded w-100" alt="Deep Learning-based Sensing">
+            {% include dl_sensing_loop.html %}
         </div>
         {% if dl_pubs.size > 0 %}
         <p><strong class="text-primary">Related Publications:</strong></p>

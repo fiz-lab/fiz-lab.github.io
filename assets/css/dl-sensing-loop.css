@@ -1,0 +1,7 @@
+
+.ds-sensing{display:block;width:100%;max-width:1665px;margin:0 auto;background:#fff;line-height:0;overflow:hidden}
+.ds-sensing .ds-canvas{display:block;width:100%;height:auto;aspect-ratio:1665/944}
+.ds-sensing .ds-live-layer{display:none}
+.ds-sensing[data-active="true"] .ds-live-layer{display:block}
+@media(prefers-reduced-motion:reduce){.ds-sensing .ds-live-layer{display:none!important}}
+@media print{.ds-sensing .ds-live-layer{display:none!important}}
