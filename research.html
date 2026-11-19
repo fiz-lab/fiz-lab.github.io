@@ -10,6 +10,16 @@ navbar_title: RESEARCH
 {% assign shown_urls = "|" %}
 {% assign all_pubs = site.publications | sort: "date" | reverse %}
 
+<div class="card border-0 shadow-sm bg-white mb-4">
+    <div class="card-body p-4">
+        <h3 class="text-primary">🦾 Network for Robotics</h3>
+        <hr/>
+        <div class="mb-3">
+            {% include network_robotics_loop.html %}
+        </div>
+    </div>
+</div>
+
 {% assign llm_pubs = "" | split: "" %}
 {% for pub in all_pubs %}
     {% unless pub.preprint %}{% if pub.research_area contains 'mllm' %}
