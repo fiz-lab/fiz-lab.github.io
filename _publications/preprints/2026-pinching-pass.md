@@ -3,7 +3,7 @@ title:          "Joint Pinching-Antenna Positioning, User Association, and Resou
 date:           2026-10-30 00:01:00 +0900
 research_area:
 - isac
-- ai_wireless
+- 6g_network
 preprint: true
 selected:       false
 pub:            "In preparation"

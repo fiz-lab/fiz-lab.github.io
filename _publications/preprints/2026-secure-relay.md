@@ -6,7 +6,7 @@ research_area:
 - ai_wireless
 preprint: true
 selected:       false
-pub:            "Submitted to IEEE Transactions on Wireless Communications (TWC)"
+pub:            "Submitted to IEEE Transactions on Communications (TCOM)"
 pub_date:       ""
 abstract: ""
 authors:

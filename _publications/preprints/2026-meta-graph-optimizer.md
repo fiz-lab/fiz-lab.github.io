@@ -4,6 +4,7 @@ date:           2026-11-16 00:01:00 +0900
 research_area:
 - ai_wireless
 - mllm
+- 6g_network
 preprint: true
 selected:       false
 pub:            "In preparation"
