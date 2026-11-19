@@ -30,7 +30,6 @@
 .nfr-fig .fpulse{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round;stroke-dasharray:.16 1;stroke-dashoffset:.16;animation:nfr-travel 2.2s linear infinite}
 @keyframes nfr-travel{to{stroke-dashoffset:-1}}
 @media (prefers-reduced-motion:reduce){.nfr-fig .fpulse{display:none}}
-.nfr-fig figcaption{margin:10px auto 0;max-width:900px;color:#536170;font-size:14px;line-height:1.55;text-align:center}
 .nfr-fig .dg .t-title {font-size: 16px; font-weight: 600; fill: var(--ink);}
 .nfr-fig .dg .t-lbl {font-size: 13.5px; font-weight: 500; fill: var(--ink);}
 .nfr-fig .dg .t-sub {font-size: 12.5px; fill: var(--ink-2);}
@@ -101,5 +100,4 @@
 <video class="ue-front" src="{{ '/assets/images/physical-ai/ue_front.mp4' | relative_url }}" muted playsinline loop autoplay preload="metadata" aria-hidden="true"></video>
 <video class="ue-wrist" src="{{ '/assets/images/physical-ai/ue_wrist.mp4' | relative_url }}" muted playsinline loop autoplay preload="metadata" aria-hidden="true"></video>
 </div></div>
-<figcaption>Robots stream camera frames over the radio access network to an AI-RAN edge server, where vRAN processing and VLA inference share the same GPU, and the resulting action chunks are sent back to the robots. Scheduling, admission, load balancing, slicing, routing, offloading, congestion and mobility control are orchestrated together with the edge compute so that the loop closes in time.</figcaption>
 </figure>

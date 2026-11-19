@@ -17,6 +17,15 @@ navbar_title: RESEARCH
         <div class="mb-3">
             {% include network_robotics_loop.html %}
         </div>
+        {% assign pai_pubs = all_pubs | where_exp: "p", "p.path contains '2026-vla-gpu-ai-ran'" %}
+        {% if pai_pubs.size > 0 %}
+        <p><strong class="text-primary">Related Works:</strong></p>
+        <ul>
+            {% for pub in pai_pubs %}
+            <li>{{ pub.title }}, <em>{% include widgets/pub_styled.html pub=pub.pub %}</em></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
     </div>
 </div>
 
