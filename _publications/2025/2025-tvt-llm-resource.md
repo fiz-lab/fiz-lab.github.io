@@ -5,6 +5,7 @@ type:           journal
 research_area:
 - mllm
 - ai_wireless
+- 6g_network
 selected:       true
 pub:            "IEEE Transactions on Vehicular Technology (TVT), vol. 74, no. 10, pp. 16630-16635, Oct. 2025"
 pub_date:       ""

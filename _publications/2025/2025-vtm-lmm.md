@@ -5,6 +5,7 @@ type:           journal
 research_area:
 - mllm
 - ai_wireless
+- 6g_network
 selected:       true
 pub:            "IEEE Vehicular Technology Magazine (VTM), accepted"
 pub_date:       ""
