@@ -65,17 +65,16 @@ createBubbleInfo = function (hashGroup, n, w, h) {
     var scaleY = function (v) { return (h / 16) * v; };
     var radius = function (v) { var min = 10; var max = wh / 2; return min + ((v / 16) * (max - min)); };
     var color = function (i) {
+        // FIZLab palette: the banner's blue to pink family
         var c = [
-            "#1f77b4", "#aec7e8",  // blue
-            "#ff7f0e", "#ffbb78",  // orange
-            "#2ca02c", "#98df8a",  // green
-            "#d62728", "#ff9896",  // red
-            "#9467bd", "#c5b0d5",  // purple
-            "#8c564b", "#c49c94",  // brown
-            // "#e377c2", "#f7b6d2",  // pink
-            // "#7f7f7f", "#c7c7c7",  // gray
-            "#bcbd22", "#dbdb8d",  // yellow
-            "#17becf", "#9edae5",  // cyan
+            "#0d44e1", "#a9c1fb",  // blue
+            "#b34483", "#ecb6d3",  // pink
+            "#3a6cf0", "#c7d6fd",  // light blue
+            "#6a4fd8", "#cbbff4",  // violet
+            "#2f8be6", "#b5d8f8",  // sky
+            "#d9659f", "#f6cde1",  // rose
+            "#162d51", "#9fb1cc",  // ink
+            "#8a5bd6", "#dccdf5",  // lavender
         ];
         return c[i % c.length];
     };

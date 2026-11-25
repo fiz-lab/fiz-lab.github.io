@@ -2,9 +2,12 @@
 layout: default
 title: Homepage
 navbar_title: HOME
+hero: true
 ---
 
-{% include widgets/profile_card_bio_only.html %}
+{% include widgets/home_banner.html %}
+
+{% include widgets/research_panels.html %}
 
 {% if site.data.display.homepage.show_news %}
 {% assign count_news = site.news | size %}

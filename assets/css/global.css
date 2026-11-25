@@ -106,3 +106,78 @@ div.lazy {
     font-family: Source Code Pro, monospace;
 }
 
+
+/* ------------------------------------------------------------------
+   FIZLab theme: the banner's blue (#0d44e1) and pink (#b34483)
+   ------------------------------------------------------------------ */
+:root {
+    --fz-blue: #0d44e1;
+    --fz-blue-2: #3a6cf0;
+    --fz-blue-soft: #e8f0ff;
+    --fz-pink: #b34483;
+    --fz-pink-2: #d9659f;
+    --fz-pink-soft: #fbeaf3;
+    --fz-ink: #162d51;
+    --fz-muted: #49627d;
+    --fz-line: #dbe5f3;
+    --fz-grad: linear-gradient(90deg, #0d44e1 0%, #6a4fd8 52%, #b34483 100%);
+}
+
+/* page background: the banner's sky blue drifting to lavender and a pink glow */
+body, body.bg-light {
+    color: var(--fz-ink);
+    background-color: #dfe9fb !important;
+    background-image:
+        radial-gradient(64rem 44rem at -6% -10%, rgba(13, 68, 225, 0.26), rgba(13, 68, 225, 0) 62%),
+        radial-gradient(50rem 34rem at 106% 106%, rgba(179, 68, 131, 0.05), rgba(179, 68, 131, 0) 60%),
+        radial-gradient(44rem 32rem at 96% 4%, rgba(106, 79, 216, 0.1), rgba(106, 79, 216, 0) 65%),
+        linear-gradient(160deg, #d3e4ff 0%, #dde6fc 55%, #e5e4f8 100%);
+    background-attachment: fixed;
+}
+::selection { background: rgba(179, 68, 131, 0.18); }
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { color: var(--fz-ink); }
+a { color: var(--fz-blue); }
+a:hover { color: var(--fz-pink); }
+.text-primary { color: var(--fz-blue) !important; }
+a.text-primary:hover, a.text-primary:focus { color: var(--fz-pink) !important; }
+.text-muted { color: var(--fz-muted) !important; }
+
+/* cards: soft blue shadow, gradient rule under section titles */
+.card.shadow-sm, .shadow-sm { box-shadow: 0 2px 12px rgba(13, 68, 225, 0.07) !important; }
+.card-body > hr {
+    height: 2px;
+    border: 0;
+    background: var(--fz-grad);
+    opacity: 0.55;
+    border-radius: 2px;
+}
+
+/* sidebar menu */
+.sidebar-menu .nav-link { color: #3d5270; }
+.sidebar-menu .nav-link:hover { color: var(--fz-blue); background-color: var(--fz-blue-soft); }
+.sidebar-menu .nav-link.active {
+    color: var(--fz-blue);
+    font-weight: 700;
+    background: linear-gradient(90deg, #e3ecff, #ecebfc);
+    box-shadow: inset 3px 0 0 var(--fz-blue);
+}
+
+/* buttons */
+.btn-primary { background-color: var(--fz-blue); border-color: var(--fz-blue); }
+.btn-primary:hover, .btn-primary:focus { background-color: #0a37b8; border-color: #0a37b8; }
+.btn-outline-primary { color: var(--fz-blue); border-color: var(--fz-blue); }
+.btn-outline-primary:hover { background-color: var(--fz-blue); border-color: var(--fz-blue); }
+.btn-outline-secondary:hover { background-color: var(--fz-pink); border-color: var(--fz-pink); color: #fff; }
+
+/* research-area badges, all from the blue to pink family */
+.badge-primary { background-color: var(--fz-blue); }
+.badge-info { background-color: #2f8be6; color: #fff; }
+.badge-success { background-color: #6a4fd8; color: #fff; }
+.badge-warning { background-color: var(--fz-pink-2); color: #fff; }
+.badge-publication { font-weight: 600; letter-spacing: 0.01em; }
+
+/* lists and tables pick up the palette */
+.card-body ul li::marker { color: var(--fz-pink); }
+.table thead th { border-bottom-color: var(--fz-line); color: var(--fz-muted); }
+.border-gray { border-color: var(--fz-line) !important; }

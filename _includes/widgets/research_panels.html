@@ -1,0 +1,44 @@
+<style>
+.fz-panels{display:grid;gap:1.25rem;margin-bottom:1.5rem}
+.fz-panel{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:1.6rem;align-items:center;padding:1.25rem;background:#fff;border-radius:.8rem;box-shadow:0 2px 12px rgba(13,68,225,.07)}
+.fz-panel-art{display:flex;align-items:center;justify-content:center;aspect-ratio:16/10;padding:.6rem;border-radius:.6rem;background:linear-gradient(135deg,#eef4ff,#f3f1fd);overflow:hidden}
+.fz-panel-art img{display:block;max-width:100%;max-height:100%;object-fit:contain;border-radius:.35rem}
+.fz-panel-no{display:block;margin-bottom:.35rem;font-size:.8rem;font-weight:700;letter-spacing:.14em;color:#b34483}
+.fz-panel h3{margin:0 0 .6rem;font-size:1.45rem;font-weight:700;letter-spacing:-.01em;color:#162d51}
+.fz-panel h3 em{font-style:normal;background:linear-gradient(90deg,#0d44e1,#6a4fd8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.fz-panel p{margin:0 0 .85rem;font-size:.98rem;line-height:1.65;color:#3d5270}
+.fz-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.fz-tags span{padding:.2rem .65rem;border-radius:999px;font-size:.8rem;font-weight:600;color:#0d44e1;background:#e8f0ff}
+.fz-tags span:nth-child(3n){color:#b34483;background:#f8e8f1}
+@media (max-width:767.98px){.fz-panel{grid-template-columns:1fr;gap:1rem}}
+</style>
+<div class="mt-3 d-md-none"></div>
+<section class="fz-panels" aria-label="Research directions">
+    <article class="fz-panel">
+        <div class="fz-panel-art"><img src="{{ '/assets/images/home/ai-for-network.webp' | relative_url }}" alt="AI-aided wireless communication: multi-dimensional network inputs feed an AI engine that learns, perceives, reasons and acts on the radio network" loading="lazy"></div>
+        <div>
+            <span class="fz-panel-no">01</span>
+            <h3><em>AI</em> for Network</h3>
+            <p>We bring AI into the radio access network, from deep learning to multimodal large language models. Models read channels, traffic and context, then schedule, allocate and orchestrate wireless resources on their own.</p>
+            <div class="fz-tags"><span>MLLM</span><span>Resource allocation</span><span>AI-native RAN</span></div>
+        </div>
+    </article>
+    <article class="fz-panel">
+        <div class="fz-panel-art"><img src="{{ '/assets/images/home/network-for-physical-ai.webp' | relative_url }}" alt="A robot streams camera frames over the radio access network to an AI-RAN edge server running vRAN and VLA inference, which returns action chunks" loading="lazy"></div>
+        <div>
+            <span class="fz-panel-no">02</span>
+            <h3><em>Network</em> for Physical AI</h3>
+            <p>Robots driven by vision-language-action models must upload what they see and get their next actions back within tight deadlines. We co-design uplink scheduling, edge GPU sharing and network orchestration over AI-RAN so robot fleets act in real time.</p>
+            <div class="fz-tags"><span>AI-RAN</span><span>Edge inference</span><span>Robot fleets</span></div>
+        </div>
+    </article>
+    <article class="fz-panel">
+        <div class="fz-panel-art"><img src="{{ '/assets/images/home/ai-for-sensing.webp' | relative_url }}" alt="AI-enabled integrated sensing and communication: a base station senses targets, an AI engine perceives and reasons, and the network adapts its resources" loading="lazy"></div>
+        <div>
+            <span class="fz-panel-no">03</span>
+            <h3><em>AI</em> for Sensing</h3>
+            <p>Wireless signals can see. We use deep learning to turn radio echoes into detection, localization and tracking, and integrate sensing with communication (ISAC) so the network perceives its surroundings while it serves them.</p>
+            <div class="fz-tags"><span>ISAC</span><span>Radar sensing</span><span>Deep learning</span></div>
+        </div>
+    </article>
+</section>
