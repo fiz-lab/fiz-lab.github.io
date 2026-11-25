@@ -181,3 +181,45 @@ a.text-primary:hover, a.text-primary:focus { color: var(--fz-pink) !important; }
 .card-body ul li::marker { color: var(--fz-pink); }
 .table thead th { border-bottom-color: var(--fz-line); color: var(--fz-muted); }
 .border-gray { border-color: var(--fz-line) !important; }
+
+/* publication tags: research theme first (filled gradient pill with an icon),
+   a gradient divider, then the colored keyword badges */
+.pub-tags { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem; }
+.pub-theme {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.2rem 0.75rem 0.2rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(13, 68, 225, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+.pub-theme i { font-size: 0.78rem; opacity: 0.92; }
+.pub-theme--net { background: linear-gradient(135deg, #0d44e1, #3f7bf3); }
+.pub-theme--pai { background: linear-gradient(135deg, #3a28b8, #7457e6); }
+.pub-theme--sense { background: linear-gradient(135deg, #9a2c6b, #d9659f); box-shadow: 0 2px 6px rgba(179, 68, 131, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.25); }
+.pub-sep {
+    display: inline-block;
+    width: 2px;
+    height: 1.15rem;
+    margin: 0 0.45rem;
+    border-radius: 2px;
+    background: linear-gradient(180deg, rgba(13, 68, 225, 0.15), #6a4fd8 50%, rgba(179, 68, 131, 0.15));
+}
+/* keyword badges: a secondary palette, distinct from the three theme colors */
+.pub-kw {
+    display: inline-block;
+    padding: 0.16rem 0.5rem;
+    border-radius: 0.3rem;
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: #fff;
+}
+.pub-kw--isac { background: #0f8f9c; }
+.pub-kw--mllm { background: #d9822b; }
+.pub-kw--aiw { background: #2a9fd6; }
+.pub-kw--dls { background: #2f9e6e; }
+.pub-kw--6g { background: #56688f; }
+.pub-kw--pai { background: #e0664e; }

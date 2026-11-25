@@ -4,54 +4,72 @@ title: Research
 navbar_title: RESEARCH
 ---
 
+<style>
+.fz-sec-no{display:block;margin-bottom:.25rem;font-size:.82rem;font-weight:700;letter-spacing:.14em;color:#b34483}
+.fz-sec-title{margin:0;font-size:1.7rem;font-weight:700;letter-spacing:-.01em;color:#162d51}
+.fz-sec-title em{font-style:normal;background:linear-gradient(90deg,#0d44e1,#6a4fd8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.fz-sec-lead{margin:.9rem 0 1.2rem;font-size:1.02rem;line-height:1.7;color:#3d5270}
+.fz-sec-sub{margin:1.6rem 0 .8rem;font-size:1.08rem;font-weight:700;color:#162d51}
+</style>
+
 <div class="row mt-3">
 <div class="col">
 
 {% assign shown_urls = "|" %}
 {% assign all_pubs = site.publications | sort: "date" | reverse %}
 
-<div class="card border-0 shadow-sm bg-white mb-4">
-    <div class="card-body p-4">
-        <h3 class="text-primary">🦾 Network Orchestration for Physical AI</h3>
-        <hr/>
-        <div class="mb-3">
-            {% include network_robotics_loop.html %}
-        </div>
-        {% assign pai_pubs = all_pubs | where_exp: "p", "p.path contains '2026-vla-gpu-ai-ran'" %}
-        {% if pai_pubs.size > 0 %}
-        <p><strong class="text-primary">Related Works:</strong></p>
-        <ul>
-            {% for pub in pai_pubs %}
-            <li>{{ pub.title }}, <em>{% include widgets/pub_styled.html pub=pub.pub %}</em></li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-    </div>
-</div>
-
-{% assign llm_pubs = "" | split: "" %}
+{%- comment -%} 03 AI for Sensing (picked first so ISAC papers stay here): highest impact factor first, newest first among equal IFs {%- endcomment -%}
+{% assign keys = "" | split: "" %}
 {% for pub in all_pubs %}
-    {% unless pub.preprint %}{% if pub.research_area contains 'mllm' %}
+    {% unless pub.preprint %}{% if pub.research_area contains 'dl_sensing' or pub.research_area contains 'isac' %}
         {% capture pub_key %}|{{ pub.url }}|{% endcapture %}
         {% unless shown_urls contains pub_key %}
-            {% if llm_pubs.size < 3 %}
-                {% assign llm_pubs = llm_pubs | push: pub %}
-                {% assign shown_urls = shown_urls | append: pub.url | append: "|" %}
-            {% endif %}
+            {% capture k %}{% include widgets/pub_sortkey.html pub=pub %}{% endcapture %}
+            {% assign keys = keys | push: k %}
         {% endunless %}
     {% endif %}{% endunless %}
 {% endfor %}
-<div class="card border-0 shadow-sm bg-white mb-4">
+{% assign keys = keys | sort | reverse %}
+{% assign sense_pubs = "" | split: "" %}
+{% for k in keys limit:4 %}
+    {% assign u = k | strip | split: "|" | last %}
+    {% assign p = all_pubs | where: "url", u | first %}
+    {% assign sense_pubs = sense_pubs | push: p %}
+    {% assign shown_urls = shown_urls | append: u | append: "|" %}
+{% endfor %}
+
+{%- comment -%} 01 AI for Network: highest impact factor first, newest first among equal IFs {%- endcomment -%}
+{% assign keys = "" | split: "" %}
+{% for pub in all_pubs %}
+    {% unless pub.preprint %}{% if pub.research_area contains 'mllm' or pub.research_area contains 'ai_wireless' or pub.research_area contains '6g_network' %}
+        {% capture pub_key %}|{{ pub.url }}|{% endcapture %}
+        {% unless shown_urls contains pub_key %}
+            {% capture k %}{% include widgets/pub_sortkey.html pub=pub %}{% endcapture %}
+            {% assign keys = keys | push: k %}
+        {% endunless %}
+    {% endif %}{% endunless %}
+{% endfor %}
+{% assign keys = keys | sort | reverse %}
+{% assign net_pubs = "" | split: "" %}
+{% for k in keys limit:4 %}
+    {% assign u = k | strip | split: "|" | last %}
+    {% assign p = all_pubs | where: "url", u | first %}
+    {% assign net_pubs = net_pubs | push: p %}
+    {% assign shown_urls = shown_urls | append: u | append: "|" %}
+{% endfor %}
+<div class="card border-0 shadow-sm bg-white mb-4" id="ai-for-network">
     <div class="card-body p-4">
-        <h3 class="text-primary">🤖 Multimodal Large Language Model (MLLM) for Wireless Communication Networks</h3>
+        <span class="fz-sec-no">01</span>
+        <h3 class="fz-sec-title"><em>AI</em> for Network</h3>
         <hr/>
+        <p class="fz-sec-lead">We bring AI into the radio access network, from deep learning to multimodal large language models. Models read channels, traffic and context, then schedule, allocate and orchestrate wireless resources on their own.</p>
         <div class="mb-3">
             {% include mllm_wireless_loop.html %}
         </div>
-        {% if llm_pubs.size > 0 %}
+        {% if net_pubs.size > 0 %}
         <p><strong class="text-primary">Related Publications:</strong></p>
         <ul>
-            {% for pub in llm_pubs limit:3 %}
+            {% for pub in net_pubs %}
             <li>{{ pub.title }}, <em>{% include widgets/pub_styled.html pub=pub.pub %}</em></li>
             {% endfor %}
         </ul>
@@ -59,29 +77,26 @@ navbar_title: RESEARCH
     </div>
 </div>
 
-{% assign isac_pubs = "" | split: "" %}
+{%- comment -%} 02 Network for Physical AI: includes work in preparation {%- endcomment -%}
+{% assign pai_pubs = "" | split: "" %}
 {% for pub in all_pubs %}
-    {% unless pub.preprint %}{% if pub.research_area contains 'isac' or pub.research_area contains 'ai_wireless' %}
-        {% capture pub_key %}|{{ pub.url }}|{% endcapture %}
-        {% unless shown_urls contains pub_key %}
-            {% if isac_pubs.size < 3 %}
-                {% assign isac_pubs = isac_pubs | push: pub %}
-                {% assign shown_urls = shown_urls | append: pub.url | append: "|" %}
-            {% endif %}
-        {% endunless %}
-    {% endif %}{% endunless %}
+    {% if pub.research_area contains 'physical_ai' %}
+        {% assign pai_pubs = pai_pubs | push: pub %}
+    {% endif %}
 {% endfor %}
-<div class="card border-0 shadow-sm bg-white mb-4">
+<div class="card border-0 shadow-sm bg-white mb-4" id="network-for-physical-ai">
     <div class="card-body p-4">
-        <h3 class="text-primary">📡 AI Communication</h3>
+        <span class="fz-sec-no">02</span>
+        <h3 class="fz-sec-title"><em>Network</em> for Physical AI</h3>
         <hr/>
+        <p class="fz-sec-lead">Robots driven by vision-language-action models must upload what they see and get their next actions back within tight deadlines. We co-design uplink scheduling, edge GPU sharing and network orchestration over AI-RAN so robot fleets act in real time.</p>
         <div class="mb-3">
-            {% include isac_ai_comm_loop.html %}
+            {% include network_robotics_loop.html %}
         </div>
-        {% if isac_pubs.size > 0 %}
-        <p><strong class="text-primary">Related Publications:</strong></p>
+        {% if pai_pubs.size > 0 %}
+        <p><strong class="text-primary">Related Works:</strong></p>
         <ul>
-            {% for pub in isac_pubs limit:3 %}
+            {% for pub in pai_pubs limit:4 %}
             <li>{{ pub.title }}, <em>{% include widgets/pub_styled.html pub=pub.pub %}</em></li>
             {% endfor %}
         </ul>
@@ -89,29 +104,19 @@ navbar_title: RESEARCH
     </div>
 </div>
 
-{% assign dl_pubs = "" | split: "" %}
-{% for pub in all_pubs %}
-    {% unless pub.preprint %}{% if pub.research_area contains 'dl_sensing' %}
-        {% capture pub_key %}|{{ pub.url }}|{% endcapture %}
-        {% unless shown_urls contains pub_key %}
-            {% if dl_pubs.size < 3 %}
-                {% assign dl_pubs = dl_pubs | push: pub %}
-                {% assign shown_urls = shown_urls | append: pub.url | append: "|" %}
-            {% endif %}
-        {% endunless %}
-    {% endif %}{% endunless %}
-{% endfor %}
-<div class="card border-0 shadow-sm bg-white mb-4">
+<div class="card border-0 shadow-sm bg-white mb-4" id="ai-for-sensing">
     <div class="card-body p-4">
-        <h3 class="text-primary">🎯 Deep Learning-based Sensing</h3>
+        <span class="fz-sec-no">03</span>
+        <h3 class="fz-sec-title"><em>AI</em> for Sensing</h3>
         <hr/>
+        <p class="fz-sec-lead">Wireless signals can see. We use deep learning to turn radio echoes into detection, localization and tracking, and integrate sensing with communication (ISAC) so the network perceives its surroundings while it serves them.</p>
         <div class="mb-3">
             {% include dl_sensing_loop.html %}
         </div>
-        {% if dl_pubs.size > 0 %}
+        {% if sense_pubs.size > 0 %}
         <p><strong class="text-primary">Related Publications:</strong></p>
         <ul>
-            {% for pub in dl_pubs limit:3 %}
+            {% for pub in sense_pubs %}
             <li>{{ pub.title }}, <em>{% include widgets/pub_styled.html pub=pub.pub %}</em></li>
             {% endfor %}
         </ul>

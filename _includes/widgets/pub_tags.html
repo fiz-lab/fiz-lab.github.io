@@ -1,0 +1,28 @@
+{%- comment -%}
+Research theme on the left, then "|" and the sub-keywords.
+Theme rule (same as the research page): physical_ai -> Network for Physical AI;
+otherwise isac / dl_sensing -> AI for Sensing; otherwise mllm / ai_wireless / 6g_network -> AI for Network.
+{%- endcomment -%}
+{%- assign _areas = include.areas -%}
+{%- assign _theme = "" -%}
+{%- assign _joined = _areas | join: "," -%}
+{%- if _joined contains "physical_ai" -%}{%- assign _theme = "pai" -%}
+{%- elsif _joined contains "isac" or _joined contains "dl_sensing" -%}{%- assign _theme = "sense" -%}
+{%- elsif _joined contains "mllm" or _joined contains "ai_wireless" or _joined contains "6g_network" -%}{%- assign _theme = "net" -%}
+{%- endif -%}
+<p class="mt-1 mb-0 pub-tags">
+{%- if _theme == "net" -%}<span class="pub-theme pub-theme--net"><i class="fas fa-network-wired" aria-hidden="true"></i>AI for Network</span>
+{%- elsif _theme == "pai" -%}<span class="pub-theme pub-theme--pai"><i class="fas fa-robot" aria-hidden="true"></i>Network for Physical AI</span>
+{%- elsif _theme == "sense" -%}<span class="pub-theme pub-theme--sense"><i class="fas fa-satellite-dish" aria-hidden="true"></i>AI for Sensing</span>
+{%- endif -%}
+{%- if _theme != "" -%}<span class="pub-sep" aria-hidden="true"></span>{%- endif -%}
+{%- for area in _areas -%}{%- assign a = area | strip -%}
+{%- if a == "isac" -%}<span class="pub-kw pub-kw--isac">ISAC</span>
+{%- elsif a == "mllm" -%}<span class="pub-kw pub-kw--mllm">MLLM</span>
+{%- elsif a == "ai_wireless" -%}<span class="pub-kw pub-kw--aiw">AI-Wireless</span>
+{%- elsif a == "dl_sensing" -%}<span class="pub-kw pub-kw--dls">DL-Sensing</span>
+{%- elsif a == "6g_network" -%}<span class="pub-kw pub-kw--6g">6G-Network</span>
+{%- elsif a == "physical_ai" and _theme != "pai" -%}<span class="pub-kw pub-kw--pai">Physical-AI</span>
+{%- endif -%}
+{%- endfor -%}
+</p>

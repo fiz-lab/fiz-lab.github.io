@@ -1,0 +1,8 @@
+{%- comment -%}
+Sort key for a publication: impact factor (x10, offset to a fixed width), then date, then url.
+Sorting these strings in reverse gives highest IF first and, among equal IFs, the newest first.
+{%- endcomment -%}
+{%- assign _if = 0 -%}
+{%- for _v in site.data.impact_factors -%}{%- if include.pub.pub contains _v.match -%}{%- assign _if = _v.if -%}{%- break -%}{%- endif -%}{%- endfor -%}
+{%- assign _k = _if | times: 10 | round | plus: 1000 -%}
+{{- _k }}|{{ include.pub.date | date: "%Y%m%d" }}|{{ include.pub.url -}}

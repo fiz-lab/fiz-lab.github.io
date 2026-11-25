@@ -1,0 +1,19 @@
+# Journal impact factors, used to order "Related Publications" on the research page
+# (higher IF first; papers with the same IF are ordered newest first).
+# A paper matches the first entry whose `match` text appears in its `pub` field.
+# TWC, IoTJ, VTM and TVT are the values cited in the lab's news posts;
+# WCL, COMML and Access are approximate, so update them if needed. Conferences have no entry (IF 0).
+- match: "(TWC)"
+  if: 10.7
+- match: "(IoTJ)"
+  if: 8.8
+- match: "(VTM)"
+  if: 7.6
+- match: "(TVT)"
+  if: 7.1
+- match: "(WCL)"
+  if: 4.6
+- match: "(COMML)"
+  if: 4.4
+- match: "IEEE Access"
+  if: 3.6
